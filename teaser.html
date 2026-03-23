@@ -1,0 +1,47 @@
+<div class="teaser-wrapper">
+    <div class="teaser-scene">
+        <!-- Medical Image Node -->
+        <div class="node-input">
+            <svg viewBox="0 0 24 24" fill="none" class="icon" stroke="currentColor" stroke-width="2">
+                <path d="M4 4h16v16H4zM4 12l5-5 5 5M16 12l4-4M14 16h6"></path>
+            </svg>
+            <span>Med Image</span>
+        </div>
+
+        <!-- Data Flow 1 -->
+        <div class="data-flow flow-in">
+            <div class="particle p1"></div>
+            <div class="particle p2"></div>
+        </div>
+
+        <!-- FM Box -->
+        <div class="fm-box">
+            <div class="fm-label">MedFM</div>
+            <div class="fm-layers">
+                <div class="fm-layer"></div>
+                <div class="fm-layer highlight-layer"></div>
+                <div class="fm-layer"></div>
+            </div>
+            <!-- Magnifying Glass / Interpretability focus -->
+            <div class="mechanistic-lens">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+                <div class="lens-beam"></div>
+            </div>
+        </div>
+
+        <!-- Data Flow 2 -->
+        <div class="data-flow flow-out">
+            <div class="particle p3"></div>
+            <div class="particle p4"></div>
+        </div>
+
+        <!-- Output Node -->
+        <div class="node-output">
+            <div class="output-text">Diagnosis</div>
+            <div class="output-text mechanism-text">Mechanism</div>
+        </div>
+    </div>
+</div>
