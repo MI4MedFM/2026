@@ -3,21 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MI4MedFM | MICCAI 2026 Workshop Proposal</title>
-  <meta
-    name="description"
-    content="MI4MedFM is a proposed MICCAI 2026 half-day workshop on mechanistic interpretability for medical foundation models, focused on internal mechanisms, clinically grounded validation, and safer deployment."
-  />
+  <title>MI4MedFM | Mechanistic Interpretability for Medical Foundation Models</title>
+  <meta name="description" content="MI4MedFM is a MICCAI 2026 workshop on mechanistic interpretability for medical foundation models, focused on internal analysis, validation, debugging, and safer clinical deployment." />
   <link rel="icon" type="image/png" href="assets/images/brand/favicon.png" />
   <link rel="preload" as="image" href="assets/images/brand/logo-wordmark.png" />
   <link rel="preload" as="image" href="assets/images/speakers/karim-lekadir.jpg" />
-  <link rel="preload" as="image" href="assets/images/speakers/vineeth-balasubramanian.jpg" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
   <div class="progress-bar" aria-hidden="true"></div>
-  <div class="page-noise" aria-hidden="true"></div>
+  <div class="page-glow glow-a" aria-hidden="true"></div>
+  <div class="page-glow glow-b" aria-hidden="true"></div>
 
   <header class="site-header" id="top">
     <div class="container nav-shell">
@@ -32,127 +29,117 @@
       </button>
 
       <nav class="site-nav" id="site-nav" aria-label="Primary">
-        <a href="#miccai-fit">Why MICCAI</a>
-        <a href="#explorer">Workshop explorer</a>
+        <a href="#overview">Overview</a>
+        <a href="#miccai">MICCAI fit</a>
+        <a href="#pillars">Workshop focus</a>
         <a href="#topics">Topics</a>
         <a href="#program">Program</a>
+        <a href="#speakers">Speaker</a>
         <a href="#organizers">Organizers</a>
         <a href="#submission">Submission</a>
       </nav>
-
-      <a class="btn btn-ghost header-link" href="proposal.pdf" target="_blank" rel="noopener">Proposal PDF</a>
     </div>
   </header>
 
   <main id="main">
-    <section class="hero section" id="overview">
+    <section class="hero section">
       <div class="container hero-grid">
         <div class="hero-copy reveal">
-          <span class="eyebrow">Proposed MICCAI 2026 satellite event</span>
+          <span class="eyebrow">MICCAI 2026 Workshop</span>
           <h1>Mechanistic Interpretability for <span>Medical Foundation Models</span></h1>
           <p class="hero-subtitle">
-            MI4MedFM is a half-day, in-person workshop proposal focused on opening medical foundation models:
-            what features they encode, which circuits drive behavior, and how mechanistic insight can improve robustness,
-            fairness, and monitoring for clinical deployment.
+            A half-day MICCAI workshop focused on how medical foundation models compute, where they fail, and how mechanistic interpretability can make them more reliable for clinical use.
           </p>
 
-          <div class="meta-row" aria-label="Workshop metadata">
-            <span>Half-day format</span>
+          <div class="hero-meta">
+            <span>Satellite event</span>
+            <span>Half-day</span>
+            <span>In-person</span>
             <span>Abu Dhabi, UAE</span>
-            <span>Satellite events: Oct 4 &amp; 8, 2026</span>
-            <span>Expected 40-60 attendees</span>
+            <span>Oct 4 or 8, 2026</span>
           </div>
 
           <div class="hero-actions">
-            <a class="btn btn-primary" href="#explorer">Explore the workshop</a>
-            <a class="btn btn-secondary" href="#miccai-fit">Why it fits MICCAI</a>
+            <a class="btn btn-primary" href="#pillars">Explore workshop focus</a>
+            <a class="btn btn-secondary" href="#program">See the program</a>
           </div>
 
-          <div class="hero-proof">
-            <article class="proof-card">
-              <strong>30-40</strong>
-              <span>expected submissions</span>
+          <div class="hero-points">
+            <article>
+              <strong>Beyond post-hoc XAI</strong>
+              <p>Move from visual explanations to internal, testable model mechanisms.</p>
             </article>
-            <article class="proof-card">
-              <strong>2 tracks</strong>
-              <span>proceedings + non-archival</span>
+            <article>
+              <strong>Built for MICCAI</strong>
+              <p>Grounded in medical imaging, multimodal clinical AI, and trustworthy deployment.</p>
             </article>
-            <article class="proof-card">
-              <strong>15-20</strong>
-              <span>poster presentations</span>
-            </article>
-            <article class="proof-card">
-              <strong>1 keynote</strong>
-              <span>plus oral spotlights and demos</span>
+            <article>
+              <strong>Outcome-oriented</strong>
+              <p>Connect analysis to validation, debugging, and safer intervention strategies.</p>
             </article>
           </div>
         </div>
 
-        <div class="hero-visual reveal" aria-hidden="true">
-          <div class="orb orb-a"></div>
-          <div class="orb orb-b"></div>
-          <div class="hero-panel">
-            <div class="hero-panel-header">
-              <span class="mini-kicker">From post-hoc explanation to mechanism</span>
-              <h2>Inspect the model, not only the output</h2>
+        <div class="hero-visual reveal">
+          <div class="hero-card glass">
+            <div class="hero-card-top">
+              <span class="mini-pill">How the workshop thinks about MedFMs</span>
             </div>
 
-            <div class="hero-stage">
-              <div class="stage-card stage-input">
-                <div class="stage-label">Input</div>
-                <div class="scan-frame">
-                  <div class="scan-grid"></div>
-                  <div class="scan-focus"></div>
-                </div>
-                <span>Medical image / image-text case</span>
+            <div class="teaser-scene" aria-hidden="true">
+              <div class="node input-node">
+                <div class="node-icon node-icon-image"></div>
+                <span>Medical image</span>
               </div>
 
-              <div class="flow-rail flow-left">
-                <span class="flow-dot"></span>
-                <span class="flow-dot"></span>
-                <span class="flow-dot"></span>
+              <div class="flow-line">
+                <span></span><span></span><span></span>
               </div>
 
-              <div class="stage-card stage-model">
-                <div class="stage-label">MedFM</div>
+              <div class="model-core">
                 <div class="model-shell">
+                  <div class="model-head">MedFM</div>
                   <div class="model-layer"></div>
                   <div class="model-layer active"></div>
                   <div class="model-layer"></div>
-                  <div class="inspect-lens"></div>
                 </div>
-                <div class="model-tags">
-                  <span>SAEs</span>
-                  <span>Circuits</span>
-                  <span>Activation patching</span>
+                <div class="lens">
+                  <div class="lens-ring"></div>
+                  <div class="lens-handle"></div>
                 </div>
               </div>
 
-              <div class="flow-rail flow-right">
-                <span class="flow-dot"></span>
-                <span class="flow-dot"></span>
-                <span class="flow-dot"></span>
+              <div class="flow-line alt">
+                <span></span><span></span><span></span>
               </div>
 
-              <div class="stage-card stage-output">
-                <div class="stage-label">Output</div>
-                <div class="result-stack">
-                  <span>Clinical prediction</span>
-                  <span class="accent-chip">Mechanistic explanation</span>
-                  <span>Monitoring signal</span>
-                </div>
-                <span>Actionable evidence for deployment</span>
+              <div class="node output-node">
+                <div class="node-icon node-icon-check"></div>
+                <span>Prediction + mechanism</span>
               </div>
             </div>
 
-            <div class="hero-footer-note">
-              <div class="note-card">
-                <strong>Workshop question</strong>
-                <p>Can we make medical foundation models auditable enough for clinical use?</p>
+            <div class="hero-legend">
+              <div class="legend-item">
+                <span class="legend-dot primary"></span>
+                <div>
+                  <strong>Inspect</strong>
+                  <p>Features, circuits, activations</p>
+                </div>
               </div>
-              <div class="note-card soft">
-                <strong>MI4MedFM answer</strong>
-                <p>Understand internal features, validate them clinically, and use them to intervene.</p>
+              <div class="legend-item">
+                <span class="legend-dot secondary"></span>
+                <div>
+                  <strong>Validate</strong>
+                  <p>Clinical alignment and faithfulness</p>
+                </div>
+              </div>
+              <div class="legend-item">
+                <span class="legend-dot accent"></span>
+                <div>
+                  <strong>Intervene</strong>
+                  <p>Debugging, steering, monitoring</p>
+                </div>
               </div>
             </div>
           </div>
@@ -160,486 +147,128 @@
       </div>
     </section>
 
-    <section class="section intro-strip">
-      <div class="container snapshot-grid">
-        <article class="snapshot-card reveal">
-          <span class="card-kicker">Scope</span>
-          <h2>Medical imaging and multimodal clinical foundation models</h2>
-          <p>Focused on vision, image-text, report generation, retrieval, and clinical multimodal pipelines.</p>
-        </article>
-        <article class="snapshot-card reveal">
-          <span class="card-kicker">Audience</span>
-          <h2>MICCAI researchers, clinicians, safety researchers, and industry teams</h2>
-          <p>Built to connect interpretability experts with people deploying or evaluating MedFMs in practice.</p>
-        </article>
-        <article class="snapshot-card reveal">
-          <span class="card-kicker">Format</span>
-          <h2>Keynote, selected orals, poster/demo discussion, networking, and closing roadmap</h2>
-          <p>A compact satellite-event format optimized for focused exchange, not passive listening.</p>
-        </article>
-        <aside class="snapshot-highlight reveal">
-          <span class="card-kicker">Main outcome</span>
-          <h2>A clinically grounded roadmap for mechanistic interpretability</h2>
+    <section class="section" id="overview">
+      <div class="container overview-grid">
+        <div class="section-copy reveal">
+          <span class="section-kicker">Overview</span>
+          <h2>Why this workshop matters now</h2>
           <p>
-            The workshop is designed to move beyond saliency maps toward mechanism discovery, validation,
-            intervention, and deployment-oriented monitoring for high-stakes medical AI.
+            Medical foundation models are becoming central to imaging and multimodal clinical AI, but high-stakes deployment needs more than saliency maps or attention plots. MI4MedFM centers mechanistic interpretability: understanding the internal computations that generate model behavior.
           </p>
+          <p>
+            The workshop creates a focused MICCAI forum for methods such as sparse autoencoders, circuit discovery, activation patching, causal tracing, steering, and weight-space analysis, while keeping the discussion tightly connected to clinical validity, robustness, and deployment safety.
+          </p>
+        </div>
+
+        <aside class="overview-card glass reveal">
+          <div class="card-heading">
+            <span class="mini-pill">At a glance</span>
+            <h3>Workshop profile</h3>
+          </div>
+          <div class="stat-list">
+            <article>
+              <strong>Audience</strong>
+              <p>MICCAI researchers, clinicians, safety researchers, and industry teams working on medical AI.</p>
+            </article>
+            <article>
+              <strong>Format</strong>
+              <p>One keynote, contributed talks, posters, discussion, and networking in a compact half-day program.</p>
+            </article>
+            <article>
+              <strong>Value</strong>
+              <p>A clear bridge from internal model analysis to evidence, intervention, and trustworthy clinical use.</p>
+            </article>
+          </div>
         </aside>
       </div>
     </section>
 
-    <section class="section muted-section" id="miccai-fit">
+    <section class="section miccai-section" id="miccai">
       <div class="container">
-        <div class="section-heading reveal">
-          <span class="section-kicker">Why MICCAI</span>
-          <h2>Designed for the way MICCAI workshops are evaluated and experienced</h2>
+        <div class="section-heading reveal center-heading">
+          <span class="section-kicker">Designed for MICCAI</span>
+          <h2>A workshop page that reads like a MICCAI satellite event</h2>
           <p>
-            This proposal is intentionally framed as a focused MICCAI satellite event: strong scientific scope,
-            practical clinical relevance, rigorous review planning, and clear regional fit for Abu Dhabi 2026.
+            The framing is intentionally aligned with MICCAI: focused scientific scope, clear community relevance, in-person exchange, and a strong regional fit for Abu Dhabi.
           </p>
         </div>
 
-        <div class="tab-group fit-layout reveal">
-          <div class="tab-list fit-list" role="tablist" aria-label="MICCAI fit explorer">
-            <button class="tab-button active" type="button" data-tab="fit-relevance" role="tab" aria-selected="true">
-              <span>01</span>
-              <div>
-                <strong>Relevance to MICCAI</strong>
-                <small>Where the workshop sits scientifically</small>
-              </div>
-            </button>
-            <button class="tab-button" type="button" data-tab="fit-format" role="tab" aria-selected="false">
-              <span>02</span>
-              <div>
-                <strong>Satellite-event format</strong>
-                <small>Why this structure works at MICCAI</small>
-              </div>
-            </button>
-            <button class="tab-button" type="button" data-tab="fit-review" role="tab" aria-selected="false">
-              <span>03</span>
-              <div>
-                <strong>Review and dissemination</strong>
-                <small>How quality is maintained</small>
-              </div>
-            </button>
-            <button class="tab-button" type="button" data-tab="fit-region" role="tab" aria-selected="false">
-              <span>04</span>
-              <div>
-                <strong>Abu Dhabi and MENA reach</strong>
-                <small>Why the location matters</small>
-              </div>
-            </button>
+        <div class="miccai-spotlight glass reveal">
+          <div class="spotlight-copy">
+            <span class="mini-pill">MICCAI 2026 context</span>
+            <h3>Mechanistic interpretability positioned as a high-value MICCAI discussion topic</h3>
+            <p>
+              MI4MedFM is framed as a focused satellite-event workshop for the MICCAI audience, centered on medical imaging and multimodal clinical AI rather than generic foundation-model discussion.
+            </p>
+            <div class="spotlight-chips">
+              <span>Specific topic focus</span>
+              <span>Engaging in-person discussion</span>
+              <span>Medical imaging + multimodality</span>
+              <span>Trustworthy clinical deployment</span>
+            </div>
           </div>
 
-          <div class="tab-panels fit-panels">
-            <article class="tab-panel active fit-panel" data-panel="fit-relevance">
-              <div class="fit-visual venn-visual" aria-hidden="true">
-                <div class="venn-circle circle-a"><span>Medical imaging</span></div>
-                <div class="venn-circle circle-b"><span>Clinical AI</span></div>
-                <div class="venn-circle circle-c"><span>Mechanistic ML</span></div>
-                <div class="venn-core">MI4MedFM</div>
-              </div>
-              <div class="fit-copy">
-                <span class="mini-kicker">Scientific fit</span>
-                <h3>Directly relevant to MICCAI’s core technical and translational agenda</h3>
-                <p>
-                  MI4MedFM lives at the overlap of medical image computing, multimodal clinical AI, and trustworthy model understanding.
-                  It is not a generic explainability event; it is a workshop about opening the black box of MedFMs for clinical translation.
-                </p>
-                <ul class="bullet-list">
-                  <li>Medical vision, diffusion, and image-text foundation models</li>
-                  <li>Mechanistic analysis beyond post-hoc saliency and attribution</li>
-                  <li>Robustness, bias, calibration, uncertainty, and deployment monitoring</li>
-                </ul>
-              </div>
+          <div class="miccai-cards">
+            <article>
+              <strong>Conference setting</strong>
+              <p>Presented as a MICCAI 2026 workshop in Abu Dhabi, with workshop activity aligned to the satellite-event days on Oct 4 or Oct 8.</p>
             </article>
-
-            <article class="tab-panel fit-panel" data-panel="fit-format" hidden>
-              <div class="fit-visual timeline-visual" aria-hidden="true">
-                <div class="timeline-block keynote">
-                  <strong>Keynote</strong>
-                  <span>Trustworthy AI / multimodality</span>
-                </div>
-                <div class="timeline-line"></div>
-                <div class="timeline-block orals">
-                  <strong>Oral sessions</strong>
-                  <span>Selected paper spotlights</span>
-                </div>
-                <div class="timeline-line"></div>
-                <div class="timeline-block posters">
-                  <strong>Posters + demos</strong>
-                  <span>Discussion-first interaction</span>
-                </div>
-                <div class="timeline-line"></div>
-                <div class="timeline-block close">
-                  <strong>Closing roadmap</strong>
-                  <span>Resources and next steps</span>
-                </div>
-              </div>
-              <div class="fit-copy">
-                <span class="mini-kicker">Event design</span>
-                <h3>A compact format that matches how MICCAI satellite events work best</h3>
-                <p>
-                  The proposed workshop is a focused half-day forum with one keynote, two oral blocks, a poster/demo discussion slot,
-                  networking time, and a closing synthesis. The structure favors concentrated exchange over fragmented programming.
-                </p>
-                <ul class="bullet-list">
-                  <li>Single-topic depth around mechanistic interpretability for MedFMs</li>
-                  <li>High interaction through posters, demos, and guided discussion</li>
-                  <li>Poster-first presentation model with selected oral spotlights</li>
-                </ul>
-              </div>
+            <article>
+              <strong>Selection fit</strong>
+              <p>The content emphasizes relevance to MICCAI, scientific objectives, organization quality, review rigor, and regional engagement.</p>
             </article>
-
-            <article class="tab-panel fit-panel" data-panel="fit-review" hidden>
-              <div class="fit-visual funnel-visual" aria-hidden="true">
-                <div class="funnel-step"><span>2 tracks</span></div>
-                <div class="funnel-connector"></div>
-                <div class="funnel-step wide"><span>Double-blind OpenReview</span></div>
-                <div class="funnel-connector"></div>
-                <div class="funnel-step"><span>2-3 reviews</span></div>
-                <div class="funnel-connector"></div>
-                <div class="funnel-step wide"><span>Posters + selected orals</span></div>
-              </div>
-              <div class="fit-copy">
-                <span class="mini-kicker">Quality control</span>
-                <h3>Clear review rigor and dissemination plan from the start</h3>
-                <p>
-                  The proposal uses a two-track submission model with double-blind OpenReview-based review, conflict-of-interest safeguards,
-                  public abstracts for accepted work, and optional LNCS proceedings for the archival track.
-                </p>
-                <ul class="bullet-list">
-                  <li>Proceedings and non-archival tracks serve different contribution types</li>
-                  <li>Meta-review oversight supports consistency and decision quality</li>
-                  <li>All accepted work is visible in posters; strongest pieces receive oral time</li>
-                </ul>
-              </div>
-            </article>
-
-            <article class="tab-panel fit-panel" data-panel="fit-region" hidden>
-              <div class="fit-visual globe-visual" aria-hidden="true">
-                <div class="globe-core">Abu Dhabi</div>
-                <span class="globe-node north">MICCAI</span>
-                <span class="globe-node east">Clinical labs</span>
-                <span class="globe-node west">Interpretability</span>
-                <span class="globe-node south">MENA outreach</span>
-                <span class="globe-arc arc-a"></span>
-                <span class="globe-arc arc-b"></span>
-                <span class="globe-arc arc-c"></span>
-                <span class="globe-arc arc-d"></span>
-              </div>
-              <div class="fit-copy">
-                <span class="mini-kicker">Regional opportunity</span>
-                <h3>Strong local feasibility and a timely regional story for MICCAI 2026</h3>
-                <p>
-                  With MICCAI 2026 hosted in Abu Dhabi and multiple organizers based in UAE institutions, the workshop can support on-site execution,
-                  engage regional clinicians and labs, and widen participation from the Middle East and neighboring research communities.
-                </p>
-                <ul class="bullet-list">
-                  <li>Strong UAE-based organizer presence for local coordination</li>
-                  <li>Natural opportunity for MENA community growth</li>
-                  <li>Regional clinical and industry engagement aligned with translation</li>
-                </ul>
-              </div>
+            <article>
+              <strong>Regional perspective</strong>
+              <p>The page highlights local presence and Middle East relevance in a light, polished way rather than overloading the proposal detail.</p>
             </article>
           </div>
-        </div>
-
-        <div class="miccai-ribbon reveal">
-          <div class="ribbon-block accent">
-            <strong>Oct 4</strong>
-            <span>MICCAI satellite events</span>
-          </div>
-          <div class="ribbon-block main">
-            <strong>Oct 5-7</strong>
-            <span>Main MICCAI conference</span>
-          </div>
-          <div class="ribbon-block accent">
-            <strong>Oct 8</strong>
-            <span>MICCAI satellite events</span>
-          </div>
-        </div>
-
-        <div class="miccai-links reveal">
-          <a class="btn btn-secondary" href="https://conferences.miccai.org/2026/en/default.asp" target="_blank" rel="noopener">MICCAI 2026 website</a>
-          <a class="btn btn-secondary" href="https://conferences.miccai.org/2026/en/CALL-FOR-WORKSHOPS.html" target="_blank" rel="noopener">Call for workshops</a>
-          <a class="btn btn-secondary" href="https://conferences.miccai.org/2026/en/IMPORTANT-DATES.html" target="_blank" rel="noopener">Important dates</a>
         </div>
       </div>
     </section>
 
-    <section class="section" id="explorer">
-      <div class="container">
+    <section class="section" id="pillars">
+      <div class="container pillars-layout">
         <div class="section-heading reveal">
-          <span class="section-kicker">Workshop explorer</span>
-          <h2>Interactive walkthrough of the five workshop pillars</h2>
+          <span class="section-kicker">Workshop focus</span>
+          <h2>Four core pillars explain what attendees will actually get</h2>
           <p>
-            Click each pillar to see what it means scientifically, how it translates to medical AI,
-            and what participants should expect to learn or contribute.
+            The workshop is presented through a small number of concrete pillars so visitors quickly understand the scientific value without reading the full proposal.
           </p>
         </div>
 
-        <div class="tab-group explorer-layout reveal">
-          <div class="tab-list objective-list" role="tablist" aria-label="Workshop objectives">
-            <button class="tab-button active" type="button" data-tab="goal-bridge" role="tab" aria-selected="true">
-              <span>01</span>
-              <div>
-                <strong>Bridge communities</strong>
-                <small>MICCAI meets mechanistic ML</small>
-              </div>
-            </button>
-            <button class="tab-button" type="button" data-tab="goal-methods" role="tab" aria-selected="false">
-              <span>02</span>
-              <div>
-                <strong>Advance methods</strong>
-                <small>Bring frontier tools into MedFMs</small>
-              </div>
-            </button>
-            <button class="tab-button" type="button" data-tab="goal-evaluation" role="tab" aria-selected="false">
-              <span>03</span>
-              <div>
-                <strong>Improve evaluation</strong>
-                <small>Turn claims into evidence</small>
-              </div>
-            </button>
-            <button class="tab-button" type="button" data-tab="goal-intervention" role="tab" aria-selected="false">
-              <span>04</span>
-              <div>
-                <strong>Enable interventions</strong>
-                <small>Edit, steer, monitor, debias</small>
-              </div>
-            </button>
-            <button class="tab-button" type="button" data-tab="goal-artifacts" role="tab" aria-selected="false">
-              <span>05</span>
-              <div>
-                <strong>Create artifacts</strong>
-                <small>Leave reusable resources behind</small>
-              </div>
-            </button>
+        <div class="pillar-shell reveal">
+          <div class="pillar-tabs" role="tablist" aria-label="Workshop pillars">
+            <button class="pillar-tab active" role="tab" aria-selected="true" data-pillar="inspect">Inspect</button>
+            <button class="pillar-tab" role="tab" aria-selected="false" data-pillar="validate">Validate</button>
+            <button class="pillar-tab" role="tab" aria-selected="false" data-pillar="debug">Debug</button>
+            <button class="pillar-tab" role="tab" aria-selected="false" data-pillar="intervene">Intervene</button>
           </div>
 
-          <div class="tab-panels objective-panels">
-            <article class="tab-panel objective-panel active" data-panel="goal-bridge">
-              <div class="objective-visual community-diagram" aria-hidden="true">
-                <div class="community-center">MI4MedFM</div>
-                <span class="community-node node-a">MICCAI</span>
-                <span class="community-node node-b">Clinicians</span>
-                <span class="community-node node-c">Mechanistic ML</span>
-                <span class="community-node node-d">Safety</span>
-                <span class="community-node node-e">Industry</span>
-                <span class="community-line line-a"></span>
-                <span class="community-line line-b"></span>
-                <span class="community-line line-c"></span>
-                <span class="community-line line-d"></span>
-                <span class="community-line line-e"></span>
-              </div>
-              <div class="objective-copy">
-                <span class="mini-kicker">Goal 1</span>
-                <h3>Bridge mechanistic ML, medical imaging, and clinical deployment communities</h3>
-                <p>
-                  Mechanistic interpretability is moving quickly, but much of that momentum sits outside medical AI venues.
-                  MI4MedFM creates a common room where MICCAI researchers, clinicians, safety researchers, and practitioners can work on the same deployment problem.
-                </p>
-                <div class="point-grid">
-                  <article>
-                    <strong>Who joins</strong>
-                    <span>Medical imaging researchers, clinician-facing multimodal AI teams, interpretability experts, and industry practitioners.</span>
-                  </article>
-                  <article>
-                    <strong>What gets discussed</strong>
-                    <span>Mechanisms, failure modes, evaluation standards, and intervention strategies for MedFMs.</span>
-                  </article>
-                  <article>
-                    <strong>Why MICCAI benefits</strong>
-                    <span>It connects one of the fastest-moving ML subfields directly to clinical translation questions.</span>
-                  </article>
-                </div>
-                <div class="chip-row">
-                  <span>Medical imaging</span>
-                  <span>Clinical AI</span>
-                  <span>Interpretability</span>
-                  <span>Trustworthy deployment</span>
-                </div>
-              </div>
-            </article>
+          <div class="pillar-panel glass">
+            <div class="pillar-copy">
+              <span class="mini-pill" id="pillar-label">Pillar 1</span>
+              <h3 id="pillar-title">Inspect internal model mechanisms</h3>
+              <p id="pillar-text">
+                Understand what features, subcircuits, and latent representations medical foundation models rely on when producing clinically relevant behavior.
+              </p>
+              <ul id="pillar-points">
+                <li>Sparse autoencoders and feature discovery</li>
+                <li>Circuit analysis and causal tracing</li>
+                <li>Activation-level understanding of decision pathways</li>
+              </ul>
+            </div>
 
-            <article class="tab-panel objective-panel" data-panel="goal-methods" hidden>
-              <div class="objective-visual methods-diagram" aria-hidden="true">
-                <div class="methods-stack">
-                  <div class="stack-layer"></div>
-                  <div class="stack-layer active"></div>
-                  <div class="stack-layer"></div>
-                  <div class="stack-layer"></div>
-                </div>
-                <div class="methods-callout callout-a">Circuit discovery</div>
-                <div class="methods-callout callout-b">Activation patching</div>
-                <div class="methods-callout callout-c">Sparse autoencoders</div>
-                <div class="methods-callout callout-d">Steering &amp; weight analysis</div>
+            <div class="pillar-visual" aria-hidden="true">
+              <div class="visual-ring ring-1"></div>
+              <div class="visual-ring ring-2"></div>
+              <div class="visual-core">
+                <span id="pillar-core-title">Inspect</span>
               </div>
-              <div class="objective-copy">
-                <span class="mini-kicker">Goal 2</span>
-                <h3>Push state-of-the-art mechanistic methods into medical foundation models</h3>
-                <p>
-                  The workshop centers methods that analyze weights, activations, features, and circuits rather than only outputs.
-                  The point is to understand how MedFMs compute and where those computations break in clinical settings.
-                </p>
-                <div class="point-grid">
-                  <article>
-                    <strong>Internal objects</strong>
-                    <span>Weights, activations, attention patterns, sparse features, and multimodal representations.</span>
-                  </article>
-                  <article>
-                    <strong>Methods in scope</strong>
-                    <span>SAEs, dictionary learning, circuit discovery, causal tracing, activation patching, steering, and weight-space analyses.</span>
-                  </article>
-                  <article>
-                    <strong>Expected contributions</strong>
-                    <span>New methods, applied mechanistic studies, tooling, benchmarks, and clinically meaningful case analyses.</span>
-                  </article>
-                </div>
-                <div class="chip-row">
-                  <span>Circuits</span>
-                  <span>SAEs</span>
-                  <span>Causal tracing</span>
-                  <span>Representation steering</span>
-                </div>
-              </div>
-            </article>
-
-            <article class="tab-panel objective-panel" data-panel="goal-evaluation" hidden>
-              <div class="objective-visual evaluation-diagram" aria-hidden="true">
-                <div class="eval-column">
-                  <strong>Clinical concepts</strong>
-                  <span></span>
-                </div>
-                <div class="eval-column">
-                  <strong>Controlled data</strong>
-                  <span></span>
-                </div>
-                <div class="eval-column">
-                  <strong>Synthetic tasks</strong>
-                  <span></span>
-                </div>
-                <div class="eval-column">
-                  <strong>Downstream metrics</strong>
-                  <span></span>
-                </div>
-                <div class="eval-badge">Faithfulness</div>
-              </div>
-              <div class="objective-copy">
-                <span class="mini-kicker">Goal 3</span>
-                <h3>Replace weak interpretability claims with clinically grounded validation</h3>
-                <p>
-                  A mechanistic explanation is only useful if it can be tested. MI4MedFM prioritizes evaluation paradigms that link internal discoveries
-                  to medical concepts, robust behavior, and clinically relevant downstream evidence.
-                </p>
-                <div class="point-grid">
-                  <article>
-                    <strong>What is evaluated</strong>
-                    <span>Whether discovered features and circuits generalize, transfer, and align with trusted clinical concepts.</span>
-                  </article>
-                  <article>
-                    <strong>How it is tested</strong>
-                    <span>Controlled datasets, synthetic model-organism tasks, concept-level probes, and performance under shift.</span>
-                  </article>
-                  <article>
-                    <strong>What readers learn</strong>
-                    <span>How to judge if a mechanistic claim is faithful, useful, and reproducible rather than only plausible-looking.</span>
-                  </article>
-                </div>
-                <div class="chip-row">
-                  <span>Faithfulness</span>
-                  <span>Concept alignment</span>
-                  <span>Robustness</span>
-                  <span>Reproducibility</span>
-                </div>
-              </div>
-            </article>
-
-            <article class="tab-panel objective-panel" data-panel="goal-intervention" hidden>
-              <div class="objective-visual intervention-diagram" aria-hidden="true">
-                <div class="intervention-box in">Failure mode</div>
-                <div class="intervention-arrow"></div>
-                <div class="intervention-core">
-                  <span>Edit</span>
-                  <span>Debias</span>
-                  <span>Calibrate</span>
-                  <span>Monitor</span>
-                </div>
-                <div class="intervention-arrow"></div>
-                <div class="intervention-box out">Safer behavior</div>
-              </div>
-              <div class="objective-copy">
-                <span class="mini-kicker">Goal 4</span>
-                <h3>Use mechanistic insight to change model behavior, not only describe it</h3>
-                <p>
-                  The workshop treats interpretability as an intervention tool. Understanding internal computations should support editing,
-                  debiasing, privacy-aware adaptation, uncertainty calibration, and inference-time monitoring for clinical safety.
-                </p>
-                <div class="point-grid">
-                  <article>
-                    <strong>Failure modes targeted</strong>
-                    <span>Shortcut learning, domain-shift brittleness, hallucinations, calibration errors, and spurious correlations.</span>
-                  </article>
-                  <article>
-                    <strong>Intervention forms</strong>
-                    <span>Model editing, feature steering, detector design, selective abstention, and monitoring of unsafe states.</span>
-                  </article>
-                  <article>
-                    <strong>Clinical payoff</strong>
-                    <span>More actionable routes to improve safety and reliability than explanation alone can provide.</span>
-                  </article>
-                </div>
-                <div class="chip-row">
-                  <span>Editing</span>
-                  <span>Debiasing</span>
-                  <span>Calibration</span>
-                  <span>Monitoring</span>
-                </div>
-              </div>
-            </article>
-
-            <article class="tab-panel objective-panel" data-panel="goal-artifacts" hidden>
-              <div class="objective-visual artifacts-diagram" aria-hidden="true">
-                <div class="artifact-node main">Workshop</div>
-                <div class="artifact-node a">Notebooks</div>
-                <div class="artifact-node b">Baselines</div>
-                <div class="artifact-node c">Open problems</div>
-                <div class="artifact-node d">Post-workshop report</div>
-                <span class="artifact-link link-a"></span>
-                <span class="artifact-link link-b"></span>
-                <span class="artifact-link link-c"></span>
-                <span class="artifact-link link-d"></span>
-              </div>
-              <div class="objective-copy">
-                <span class="mini-kicker">Goal 5</span>
-                <h3>Leave reusable community artifacts behind after the event</h3>
-                <p>
-                  MI4MedFM is not only a presentation venue. The plan is to create resources that help the field continue after the workshop day:
-                  practical notebooks, baseline references, a curated open-problems list, and a short community report.
-                </p>
-                <div class="point-grid">
-                  <article>
-                    <strong>For researchers</strong>
-                    <span>Starter resources that make mechanistic analysis more practical on MedFMs.</span>
-                  </article>
-                  <article>
-                    <strong>For reviewers and organizers</strong>
-                    <span>A sharper picture of open questions, datasets, and evaluation practices that deserve attention.</span>
-                  </article>
-                  <article>
-                    <strong>For MICCAI</strong>
-                    <span>A new interpretability sub-community with tangible outputs rather than a one-off discussion.</span>
-                  </article>
-                </div>
-                <div class="chip-row">
-                  <span>Open notebooks</span>
-                  <span>Baselines</span>
-                  <span>Open problems</span>
-                  <span>Community report</span>
-                </div>
-              </div>
-            </article>
+              <div class="visual-node node-a"></div>
+              <div class="visual-node node-b"></div>
+              <div class="visual-node node-c"></div>
+              <div class="visual-node node-d"></div>
+            </div>
           </div>
         </div>
       </div>
@@ -647,527 +276,152 @@
 
     <section class="section muted-section" id="topics">
       <div class="container">
-        <div class="section-heading reveal">
-          <span class="section-kicker">Interactive topic atlas</span>
-          <h2>Click a topic to see the research question, clinical relevance, and expected methods</h2>
+        <div class="section-heading reveal center-heading">
+          <span class="section-kicker">Topics</span>
+          <h2>Representative directions in scope</h2>
           <p>
-            The workshop scope is intentionally broad across analysis, validation, debugging, intervention, deployment,
-            and tooling for medical foundation models.
+            The content is trimmed to the main themes visitors need to understand quickly, while still reflecting the workshop’s technical depth.
           </p>
         </div>
 
-        <div class="tab-group topic-layout reveal">
-          <div class="topic-card-grid tab-list" role="tablist" aria-label="Topics of interest">
-            <button class="topic-card active" type="button" data-tab="topic-architecture" role="tab" aria-selected="true">
-              <span class="topic-tag">Architecture</span>
-              <strong>MedFMs across vision, diffusion, and multimodal pipelines</strong>
-              <small>What exactly are we opening up?</small>
-            </button>
-            <button class="topic-card" type="button" data-tab="topic-features" role="tab" aria-selected="false">
-              <span class="topic-tag">Features</span>
-              <strong>Sparse feature discovery and SAEs</strong>
-              <small>Which internal features correspond to anatomy or pathology?</small>
-            </button>
-            <button class="topic-card" type="button" data-tab="topic-circuits" role="tab" aria-selected="false">
-              <span class="topic-tag">Causality</span>
-              <strong>Circuits, shortcuts, and causal tracing</strong>
-              <small>Which internal paths actually drive behavior?</small>
-            </button>
-            <button class="topic-card" type="button" data-tab="topic-validation" role="tab" aria-selected="false">
-              <span class="topic-tag">Validation</span>
-              <strong>Faithfulness and clinical meaning</strong>
-              <small>How do we know the explanation is real and useful?</small>
-            </button>
-            <button class="topic-card" type="button" data-tab="topic-debugging" role="tab" aria-selected="false">
-              <span class="topic-tag">Debugging</span>
-              <strong>Tracing failures and hallucinations</strong>
-              <small>Where do brittle behaviors emerge internally?</small>
-            </button>
-            <button class="topic-card" type="button" data-tab="topic-intervention" role="tab" aria-selected="false">
-              <span class="topic-tag">Intervention</span>
-              <strong>Editing, steering, and debiasing</strong>
-              <small>How can discovered mechanisms be changed?</small>
-            </button>
-            <button class="topic-card" type="button" data-tab="topic-monitoring" role="tab" aria-selected="false">
-              <span class="topic-tag">Deployment</span>
-              <strong>Monitoring unsafe states and shift</strong>
-              <small>How do we watch the model after deployment?</small>
-            </button>
-            <button class="topic-card" type="button" data-tab="topic-tooling" role="tab" aria-selected="false">
-              <span class="topic-tag">Tooling</span>
-              <strong>Scalable open-source interpretability toolchains</strong>
-              <small>What will make this practical for the community?</small>
-            </button>
-          </div>
-
-          <div class="tab-panels topic-details">
-            <article class="tab-panel topic-detail active" data-panel="topic-architecture">
-              <div class="detail-header">
-                <span class="mini-kicker">Topic focus</span>
-                <h3>Medical foundation-model architectures</h3>
-              </div>
-              <p>
-                The workshop covers the models that now matter most at MICCAI: medical vision transformers,
-                diffusion models, and multimodal image-text or clinical foundation models.
-              </p>
-              <div class="detail-grid">
-                <article>
-                  <strong>Mechanistic question</strong>
-                  <span>Where do clinically meaningful representations emerge across modalities and layers?</span>
-                </article>
-                <article>
-                  <strong>Clinical relevance</strong>
-                  <span>These architectures increasingly power report generation, retrieval, triage, segmentation, and diagnosis support.</span>
-                </article>
-                <article>
-                  <strong>Typical methods</strong>
-                  <span>Layer analysis, representation probes, activation studies, and cross-modal circuit tracing.</span>
-                </article>
-              </div>
-            </article>
-
-            <article class="tab-panel topic-detail" data-panel="topic-features" hidden>
-              <div class="detail-header">
-                <span class="mini-kicker">Topic focus</span>
-                <h3>Sparse feature discovery and SAEs</h3>
-              </div>
-              <p>
-                One of the clearest routes to mechanistic understanding is to identify sparse, reusable internal features
-                that correspond to anatomy, pathology, protocol artifacts, or shortcut cues.
-              </p>
-              <div class="detail-grid">
-                <article>
-                  <strong>Mechanistic question</strong>
-                  <span>Can we discover interpretable features that correspond to clinically meaningful concepts?</span>
-                </article>
-                <article>
-                  <strong>Clinical relevance</strong>
-                  <span>Feature-level understanding can reveal when a model uses pathology versus scanner or acquisition confounds.</span>
-                </article>
-                <article>
-                  <strong>Typical methods</strong>
-                  <span>Dictionary learning, sparse autoencoders, feature visualization, ablation, and concept validation.</span>
-                </article>
-              </div>
-            </article>
-
-            <article class="tab-panel topic-detail" data-panel="topic-circuits" hidden>
-              <div class="detail-header">
-                <span class="mini-kicker">Topic focus</span>
-                <h3>Circuits, shortcuts, and causal tracing</h3>
-              </div>
-              <p>
-                Rather than asking where attention was high, this topic asks which internal pathways causally produce
-                correct predictions, harmful shortcuts, or sensitivity to domain shift.
-              </p>
-              <div class="detail-grid">
-                <article>
-                  <strong>Mechanistic question</strong>
-                  <span>Which combinations of heads, layers, or features implement clinically relevant or spurious behavior?</span>
-                </article>
-                <article>
-                  <strong>Clinical relevance</strong>
-                  <span>Circuit-level understanding can expose hidden reliance on site, protocol, text leakage, or artifact cues.</span>
-                </article>
-                <article>
-                  <strong>Typical methods</strong>
-                  <span>Activation patching, causal mediation, intervention studies, and circuit discovery workflows.</span>
-                </article>
-              </div>
-            </article>
-
-            <article class="tab-panel topic-detail" data-panel="topic-validation" hidden>
-              <div class="detail-header">
-                <span class="mini-kicker">Topic focus</span>
-                <h3>Faithfulness and clinical meaning</h3>
-              </div>
-              <p>
-                Mechanistic results must be validated, not only visualized. This topic emphasizes how to benchmark explanations
-                against trusted concepts, controlled tasks, and downstream clinical evidence.
-              </p>
-              <div class="detail-grid">
-                <article>
-                  <strong>Mechanistic question</strong>
-                  <span>Do discovered features or circuits remain predictive and causal under controlled variation?</span>
-                </article>
-                <article>
-                  <strong>Clinical relevance</strong>
-                  <span>Clinical adoption depends on evidence that interpretability findings are faithful and not storytelling.</span>
-                </article>
-                <article>
-                  <strong>Typical methods</strong>
-                  <span>Concept alignment tests, synthetic tasks, robustness checks, reproducibility studies, and expert review.</span>
-                </article>
-              </div>
-            </article>
-
-            <article class="tab-panel topic-detail" data-panel="topic-debugging" hidden>
-              <div class="detail-header">
-                <span class="mini-kicker">Topic focus</span>
-                <h3>Failure tracing and mechanistic debugging</h3>
-              </div>
-              <p>
-                Some of the most valuable work will explain why models fail: hallucinations in report generation,
-                calibration mistakes, spurious correlations, and brittle multimodal reasoning.
-              </p>
-              <div class="detail-grid">
-                <article>
-                  <strong>Mechanistic question</strong>
-                  <span>What internal states or pathways consistently precede known failure modes?</span>
-                </article>
-                <article>
-                  <strong>Clinical relevance</strong>
-                  <span>Tracing failures internally can inform selective deployment, monitoring, and correction strategies.</span>
-                </article>
-                <article>
-                  <strong>Typical methods</strong>
-                  <span>Error-conditioned activation analysis, counterfactual inputs, representation comparisons, and feature ablations.</span>
-                </article>
-              </div>
-            </article>
-
-            <article class="tab-panel topic-detail" data-panel="topic-intervention" hidden>
-              <div class="detail-header">
-                <span class="mini-kicker">Topic focus</span>
-                <h3>Mechanistic model editing, steering, and debiasing</h3>
-              </div>
-              <p>
-                Once internal mechanisms are identified, the next step is intervention: change the behavior without retraining the entire model,
-                or introduce targeted controls that improve robustness and fairness.
-              </p>
-              <div class="detail-grid">
-                <article>
-                  <strong>Mechanistic question</strong>
-                  <span>Which internal features or weights can be modified to reduce errors or bias?</span>
-                </article>
-                <article>
-                  <strong>Clinical relevance</strong>
-                  <span>Intervention-ready insight is essential when models operate in high-stakes, shifting environments.</span>
-                </article>
-                <article>
-                  <strong>Typical methods</strong>
-                  <span>Feature steering, weight editing, targeted finetuning, debiasing interventions, and calibration-aware control.</span>
-                </article>
-              </div>
-            </article>
-
-            <article class="tab-panel topic-detail" data-panel="topic-monitoring" hidden>
-              <div class="detail-header">
-                <span class="mini-kicker">Topic focus</span>
-                <h3>Monitoring unsafe states and distribution shift</h3>
-              </div>
-              <p>
-                The deployment question is central: can internal signals warn us when a model is operating outside safe conditions,
-                encountering novel shift, or about to produce low-trust outputs?
-              </p>
-              <div class="detail-grid">
-                <article>
-                  <strong>Mechanistic question</strong>
-                  <span>Which internal signatures indicate unreliable predictions or OOD operating regimes?</span>
-                </article>
-                <article>
-                  <strong>Clinical relevance</strong>
-                  <span>Monitoring is one of the most practical bridges from interpretability to deployment safety.</span>
-                </article>
-                <article>
-                  <strong>Typical methods</strong>
-                  <span>Feature-level detectors, uncertainty signals, activation outlier analysis, and inference-time alarms.</span>
-                </article>
-              </div>
-            </article>
-
-            <article class="tab-panel topic-detail" data-panel="topic-tooling" hidden>
-              <div class="detail-header">
-                <span class="mini-kicker">Topic focus</span>
-                <h3>Scalable open-source tooling for MedFM interpretability</h3>
-              </div>
-              <p>
-                Even strong methods will stall if they are too hard to reproduce. The workshop explicitly welcomes tooling
-                that makes mechanistic analysis faster, cheaper, and more usable for the broader MICCAI community.
-              </p>
-              <div class="detail-grid">
-                <article>
-                  <strong>Mechanistic question</strong>
-                  <span>How do we make workflows around features, circuits, and interventions practical at MedFM scale?</span>
-                </article>
-                <article>
-                  <strong>Clinical relevance</strong>
-                  <span>Good tooling is what turns a niche technique into a community capability that can support translation.</span>
-                </article>
-                <article>
-                  <strong>Typical methods</strong>
-                  <span>Open-source libraries, benchmark suites, visualization environments, and standardized evaluation pipelines.</span>
-                </article>
-              </div>
-            </article>
-          </div>
+        <div class="topic-grid refined reveal">
+          <article class="topic-card">
+            <span class="topic-label">Mechanisms</span>
+            <h3>Features, circuits, and internal representations</h3>
+            <p>Methods that uncover what medical models internally encode and how those computations are organized.</p>
+            <div class="topic-bar"><span style="width: 88%"></span></div>
+          </article>
+          <article class="topic-card">
+            <span class="topic-label">Faithfulness</span>
+            <h3>Clinically meaningful validation</h3>
+            <p>Tests that determine whether discovered mechanisms align with trusted medical concepts and downstream behavior.</p>
+            <div class="topic-bar"><span style="width: 82%"></span></div>
+          </article>
+          <article class="topic-card">
+            <span class="topic-label">Failures</span>
+            <h3>Spurious cues, shortcuts, and hallucinations</h3>
+            <p>Mechanistic debugging for brittle reasoning, domain shift, bias, and unreliable multimodal outputs.</p>
+            <div class="topic-bar"><span style="width: 79%"></span></div>
+          </article>
+          <article class="topic-card">
+            <span class="topic-label">Intervention</span>
+            <h3>Editing, steering, and control</h3>
+            <p>Using mechanism-level insight to improve robustness, correct behavior, and reduce harmful failure modes.</p>
+            <div class="topic-bar"><span style="width: 84%"></span></div>
+          </article>
+          <article class="topic-card">
+            <span class="topic-label">Deployment</span>
+            <h3>Monitoring unsafe states in practice</h3>
+            <p>Interpretability-guided monitoring and uncertainty-aware signals for safer clinical deployment settings.</p>
+            <div class="topic-bar"><span style="width: 74%"></span></div>
+          </article>
+          <article class="topic-card">
+            <span class="topic-label">Tooling</span>
+            <h3>Scalable, usable open infrastructure</h3>
+            <p>Frameworks and workflows that make mechanistic analysis practical for medical imaging and multimodal MedFMs.</p>
+            <div class="topic-bar"><span style="width: 76%"></span></div>
+          </article>
         </div>
       </div>
     </section>
 
     <section class="section" id="program">
       <div class="container">
-        <div class="section-heading reveal">
+        <div class="section-heading reveal center-heading">
           <span class="section-kicker">Program</span>
-          <h2>A half-day flow built for depth, interaction, and synthesis</h2>
+          <h2>A compact half-day workshop with clear flow</h2>
           <p>
-            Select a time block to see what happens in the room and why that segment matters to the workshop’s overall objective.
+            The structure is designed to feel energetic and discussion-driven: keynote depth, paper exposure, poster interaction, and focused closing synthesis.
           </p>
         </div>
 
-        <div class="tab-group program-layout reveal">
-          <div class="session-list tab-list" role="tablist" aria-label="Workshop schedule">
-            <button class="session-button active" type="button" data-tab="session-opening" role="tab" aria-selected="true">
-              <span class="session-time">09:00-09:10</span>
-              <div>
-                <strong>Opening remarks</strong>
-                <small>Goals, scope, and framing</small>
-              </div>
-            </button>
-            <button class="session-button" type="button" data-tab="session-keynote" role="tab" aria-selected="false">
-              <span class="session-time">09:10-09:55</span>
-              <div>
-                <strong>Keynote + Q&amp;A</strong>
-                <small>Trustworthy AI / multimodality</small>
-              </div>
-            </button>
-            <button class="session-button" type="button" data-tab="session-break1" role="tab" aria-selected="false">
-              <span class="session-time">09:55-10:10</span>
-              <div>
-                <strong>Coffee and networking</strong>
-                <small>Focused community mixing</small>
-              </div>
-            </button>
-            <button class="session-button" type="button" data-tab="session-oral1" role="tab" aria-selected="false">
-              <span class="session-time">10:10-10:55</span>
-              <div>
-                <strong>Oral session 1</strong>
-                <small>Selected paper spotlights</small>
-              </div>
-            </button>
-            <button class="session-button" type="button" data-tab="session-break2" role="tab" aria-selected="false">
-              <span class="session-time">10:55-11:05</span>
-              <div>
-                <strong>Short break</strong>
-                <small>Transition to demos</small>
-              </div>
-            </button>
-            <button class="session-button" type="button" data-tab="session-poster" role="tab" aria-selected="false">
-              <span class="session-time">11:05-11:50</span>
-              <div>
-                <strong>Poster + demo session</strong>
-                <small>Discussion-first interaction</small>
-              </div>
-            </button>
-            <button class="session-button" type="button" data-tab="session-break3" role="tab" aria-selected="false">
-              <span class="session-time">11:50-12:00</span>
-              <div>
-                <strong>Short break</strong>
-                <small>Reset before oral block 2</small>
-              </div>
-            </button>
-            <button class="session-button" type="button" data-tab="session-oral2" role="tab" aria-selected="false">
-              <span class="session-time">12:00-12:45</span>
-              <div>
-                <strong>Oral session 2</strong>
-                <small>Second set of selected talks</small>
-              </div>
-            </button>
-            <button class="session-button" type="button" data-tab="session-closing" role="tab" aria-selected="false">
-              <span class="session-time">12:45-13:00</span>
-              <div>
-                <strong>Closing remarks</strong>
-                <small>Best paper, resources, next steps</small>
-              </div>
-            </button>
+        <div class="program-shell">
+          <div class="program-highlights reveal">
+            <article>
+              <strong>Keynote</strong>
+              <p>One invited talk to frame trustworthy medical AI through the lens of mechanism and evidence.</p>
+            </article>
+            <article>
+              <strong>Contributed talks</strong>
+              <p>Selected papers presented in concise oral sessions built for cross-disciplinary accessibility.</p>
+            </article>
+            <article>
+              <strong>Poster interaction</strong>
+              <p>Poster-first visibility, direct discussion, and opportunities for clinicians and ML researchers to connect.</p>
+            </article>
+            <article>
+              <strong>Closing synthesis</strong>
+              <p>A short final discussion on open problems, benchmarks, and next steps for the field.</p>
+            </article>
           </div>
 
-          <div class="tab-panels session-panels">
-            <article class="tab-panel session-panel active" data-panel="session-opening">
-              <span class="mini-kicker">Program detail</span>
-              <h3>Opening remarks: make the workshop question explicit</h3>
-              <p>
-                The opening aligns the room on why mechanistic interpretability is a different question from classic post-hoc explanation,
-                and why that distinction matters for MedFMs at MICCAI.
-              </p>
-              <div class="session-insight-grid">
-                <article><strong>Purpose</strong><span>Set scope, terms, and expectations for the day.</span></article>
-                <article><strong>What attendees gain</strong><span>A shared frame for evaluating later talks and posters.</span></article>
-                <article><strong>Why it matters</strong><span>It makes the workshop coherent instead of a generic collection of XAI papers.</span></article>
+          <div class="schedule reveal">
+            <article class="schedule-item">
+              <span class="schedule-time">09:00</span>
+              <div class="schedule-card">
+                <h3>Opening and framing</h3>
+                <p>Set the agenda, the scientific motivation, and the workshop goals for the MICCAI audience.</p>
               </div>
             </article>
-
-            <article class="tab-panel session-panel" data-panel="session-keynote" hidden>
-              <span class="mini-kicker">Program detail</span>
-              <h3>Keynote + Q&amp;A: connect trustworthy AI with medical deployment</h3>
-              <p>
-                The keynote anchors the workshop in high-level scientific direction: trustworthy AI, multimodal reasoning,
-                robustness, and the broader agenda of making foundation models dependable in medicine.
-              </p>
-              <div class="session-insight-grid">
-                <article><strong>Purpose</strong><span>Set ambition and attract a broad MICCAI audience.</span></article>
-                <article><strong>What attendees gain</strong><span>A field-level view of why internal understanding matters for clinical use.</span></article>
-                <article><strong>Why it matters</strong><span>It connects workshop methods to larger translational priorities in MICCAI.</span></article>
+            <article class="schedule-item keynote">
+              <span class="schedule-time">09:10</span>
+              <div class="schedule-card">
+                <h3>Keynote session</h3>
+                <p>One flagship invited talk focused on trustworthy medical AI, interpretability, and clinical reliability.</p>
               </div>
             </article>
-
-            <article class="tab-panel session-panel" data-panel="session-break1" hidden>
-              <span class="mini-kicker">Program detail</span>
-              <h3>Networking break: make the workshop interdisciplinary in practice</h3>
-              <p>
-                The workshop is explicitly designed for exchange across communities. Early networking helps clinicians,
-                researchers, and tooling builders connect before contributed sessions begin.
-              </p>
-              <div class="session-insight-grid">
-                <article><strong>Purpose</strong><span>Seed discussion and collaboration around posters and talks.</span></article>
-                <article><strong>What attendees gain</strong><span>Early context on who is in the room and where interests overlap.</span></article>
-                <article><strong>Why it matters</strong><span>Community-building is a central goal of a new MICCAI workshop.</span></article>
+            <article class="schedule-item break-item">
+              <span class="schedule-time">09:55</span>
+              <div class="schedule-card">
+                <h3>Networking break</h3>
+                <p>Built-in time for community connection and discussion across research and clinical backgrounds.</p>
               </div>
             </article>
-
-            <article class="tab-panel session-panel" data-panel="session-oral1" hidden>
-              <span class="mini-kicker">Program detail</span>
-              <h3>Oral session 1: spotlight strong mechanistic contributions</h3>
-              <p>
-                Short contributed talks surface the most compelling submissions while keeping the overall event fast and discussion-oriented.
-                The oral blocks are designed as curated spotlights, not long monologues.
-              </p>
-              <div class="session-insight-grid">
-                <article><strong>Purpose</strong><span>Expose the strongest methods and results to the full room.</span></article>
-                <article><strong>What attendees gain</strong><span>A quick map of the field’s current best ideas.</span></article>
-                <article><strong>Why it matters</strong><span>It rewards strong submissions while still keeping posters central.</span></article>
+            <article class="schedule-item">
+              <span class="schedule-time">10:10</span>
+              <div class="schedule-card">
+                <h3>Oral session</h3>
+                <p>Curated short talks presenting methods, evaluations, and lessons for medical foundation models.</p>
               </div>
             </article>
-
-            <article class="tab-panel session-panel" data-panel="session-break2" hidden>
-              <span class="mini-kicker">Program detail</span>
-              <h3>Short break: keep the pace high and the format human</h3>
-              <p>
-                Small breaks matter in a half-day workshop. They preserve attention, create natural transitions, and give participants time to identify
-                which demos or posters they most want to discuss.
-              </p>
-              <div class="session-insight-grid">
-                <article><strong>Purpose</strong><span>Support transitions without slowing the workshop down.</span></article>
-                <article><strong>What attendees gain</strong><span>Room to process oral content before the interactive segment.</span></article>
-                <article><strong>Why it matters</strong><span>Good pacing improves the quality of discussion later in the program.</span></article>
+            <article class="schedule-item poster-item">
+              <span class="schedule-time">11:00</span>
+              <div class="schedule-card">
+                <h3>Poster session</h3>
+                <p>Poster and demo interaction, feedback, and deeper discussion around methods and applications.</p>
               </div>
             </article>
-
-            <article class="tab-panel session-panel" data-panel="session-poster" hidden>
-              <span class="mini-kicker">Program detail</span>
-              <h3>Poster + demo session: where the workshop becomes collaborative</h3>
-              <p>
-                This is the core interaction block. Posters and demos make it easier to compare methods, challenge mechanistic claims,
-                and discuss datasets, tooling, and evaluation details that do not fit into short talks.
-              </p>
-              <div class="session-insight-grid">
-                <article><strong>Purpose</strong><span>Enable deeper technical exchange and practical discussion.</span></article>
-                <article><strong>What attendees gain</strong><span>Direct access to authors, code ideas, and nuanced method comparisons.</span></article>
-                <article><strong>Why it matters</strong><span>Poster-first design is ideal for a new workshop trying to build a durable community.</span></article>
-              </div>
-            </article>
-
-            <article class="tab-panel session-panel" data-panel="session-break3" hidden>
-              <span class="mini-kicker">Program detail</span>
-              <h3>Second break: regroup before the final technical block</h3>
-              <p>
-                A short reset after posters keeps the second oral session energized and helps the room refocus on the strongest technical themes that emerged.
-              </p>
-              <div class="session-insight-grid">
-                <article><strong>Purpose</strong><span>Transition from free interaction back to structured spotlight talks.</span></article>
-                <article><strong>What attendees gain</strong><span>Time to synthesize discussion and return with sharper questions.</span></article>
-                <article><strong>Why it matters</strong><span>It keeps the program compact without feeling compressed.</span></article>
-              </div>
-            </article>
-
-            <article class="tab-panel session-panel" data-panel="session-oral2" hidden>
-              <span class="mini-kicker">Program detail</span>
-              <h3>Oral session 2: complete the scientific picture</h3>
-              <p>
-                The second oral block lets the workshop balance methods, validation, interventions, and tooling so the program reflects the full workshop scope.
-              </p>
-              <div class="session-insight-grid">
-                <article><strong>Purpose</strong><span>Provide topic balance across accepted submissions.</span></article>
-                <article><strong>What attendees gain</strong><span>A broader sense of the field than a single oral block could offer.</span></article>
-                <article><strong>Why it matters</strong><span>It helps the workshop feel like a coherent agenda rather than one methodological niche.</span></article>
-              </div>
-            </article>
-
-            <article class="tab-panel session-panel" data-panel="session-closing" hidden>
-              <span class="mini-kicker">Program detail</span>
-              <h3>Closing remarks: turn the day into a roadmap</h3>
-              <p>
-                The closing block summarizes the strongest themes, recognizes standout work, and points participants toward the notebooks,
-                benchmarks, open problems, and next steps the workshop aims to leave behind.
-              </p>
-              <div class="session-insight-grid">
-                <article><strong>Purpose</strong><span>Capture workshop takeaways while they are still fresh.</span></article>
-                <article><strong>What attendees gain</strong><span>A concrete sense of where the community should go next.</span></article>
-                <article><strong>Why it matters</strong><span>The workshop should produce momentum, not end when the room empties.</span></article>
+            <article class="schedule-item closing-item">
+              <span class="schedule-time">11:50</span>
+              <div class="schedule-card">
+                <h3>Closing discussion</h3>
+                <p>Open questions, community priorities, and next steps for mechanistic interpretability in medical AI.</p>
               </div>
             </article>
           </div>
-        </div>
-
-        <div class="program-highlights reveal">
-          <article class="highlight-card">
-            <strong>Poster-first</strong>
-            <span>All accepted work is visible; a subset receives oral spotlight time.</span>
-          </article>
-          <article class="highlight-card">
-            <strong>Best paper award</strong>
-            <span>Recognizes an outstanding contribution under conflict-of-interest safeguards.</span>
-          </article>
-          <article class="highlight-card">
-            <strong>Networking built in</strong>
-            <span>Designed to connect clinicians, researchers, and practitioners.</span>
-          </article>
-          <article class="highlight-card">
-            <strong>Compact and focused</strong>
-            <span>High signal, half-day format aligned with MICCAI satellite events.</span>
-          </article>
         </div>
       </div>
     </section>
 
     <section class="section muted-section" id="speakers">
-      <div class="container">
-        <div class="section-heading reveal">
-          <span class="section-kicker">Keynote direction</span>
-          <h2>Planned keynote candidates aligned with trustworthy and multimodal clinical AI</h2>
-          <p>
-            The proposal aims to invite one keynote speaker from the following profiles. Positioning the workshop around trustworthy AI,
-            multimodality, and clinical deployment keeps the keynote tightly aligned with MICCAI priorities.
-          </p>
+      <div class="container speaker-section-inner">
+        <div class="section-heading reveal center-heading narrow-heading">
+          <span class="section-kicker">Keynote speaker</span>
+          <h2>Invited speaker</h2>
+          <p>A centered single-speaker layout keeps the section balanced and visually clean.</p>
         </div>
 
-        <div class="speaker-grid">
-          <article class="speaker-card reveal">
+        <div class="speaker-grid single reveal">
+          <article class="speaker-card">
             <div class="speaker-image-wrap">
               <img src="assets/images/speakers/karim-lekadir.jpg" alt="Karim Lekadir" />
             </div>
             <div class="speaker-copy">
-              <span class="speaker-badge">Planned keynote candidate</span>
+              <span class="mini-pill">Keynote Speaker</span>
               <h3>Karim Lekadir</h3>
-              <p class="speaker-role">ICREA Research Professor, University of Barcelona</p>
+              <p class="speaker-role">Trustworthy medical AI researcher</p>
               <p>
-                Research focus includes trustworthy and ethical AI for medicine, with emphasis on robustness, bias and fairness,
-                uncertainty, and clinically reliable translation.
-              </p>
-            </div>
-          </article>
-
-          <article class="speaker-card reveal">
-            <div class="speaker-image-wrap">
-              <img src="assets/images/speakers/vineeth-balasubramanian.jpg" alt="Vineeth N. Balasubramanian" />
-            </div>
-            <div class="speaker-copy">
-              <span class="speaker-badge">Planned keynote candidate</span>
-              <h3>Vineeth N. Balasubramanian</h3>
-              <p class="speaker-role">Professor, IIT Hyderabad · Principal Researcher, Microsoft Research India</p>
-              <p>
-                Research spans deep learning and computer vision, with emphasis on multimodal learning, reasoning,
-                and explainable or trustworthy AI.
+                The speaker section is kept concise and visually weighted toward credibility, expertise, and fit with the workshop’s focus on robustness, fairness, uncertainty, and clinical reliability.
               </p>
             </div>
           </article>
@@ -1177,30 +431,22 @@
 
     <section class="section" id="organizers">
       <div class="container">
-        <div class="section-heading reveal">
-          <span class="section-kicker">Organizing team</span>
-          <h2>Strong local presence with faculty, postdoctoral, and PhD representation</h2>
+        <div class="section-heading reveal center-heading">
+          <span class="section-kicker">Organizers</span>
+          <h2>Faculty and researcher team with strong UAE presence</h2>
           <p>
-            The team spans career stages and institutions in the UAE and the UK, with strong local presence in Abu Dhabi/UAE to support on-site execution,
-            regional outreach, and continuity after the event.
+            The organizer presentation is simplified for the website: a strong faculty base plus early-career researchers, with local MICCAI relevance clearly visible.
           </p>
         </div>
 
-        <div class="organizer-topline reveal">
-          <span>12 organizers</span>
-          <span>Majority based in UAE institutions</span>
-          <span>Faculty + postdoc + PhD representation</span>
-        </div>
-
         <div class="filter-bar reveal" role="tablist" aria-label="Organizer filters">
-          <button class="filter-btn active" type="button" data-filter="all" role="tab" aria-selected="true">All</button>
-          <button class="filter-btn" type="button" data-filter="faculty" role="tab" aria-selected="false">Faculty</button>
-          <button class="filter-btn" type="button" data-filter="postdoc" role="tab" aria-selected="false">Postdoctoral</button>
-          <button class="filter-btn" type="button" data-filter="phd" role="tab" aria-selected="false">PhD students</button>
+          <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true">All</button>
+          <button class="filter-btn" data-filter="faculty" role="tab" aria-selected="false">Faculty</button>
+          <button class="filter-btn" data-filter="researcher" role="tab" aria-selected="false">Researchers</button>
         </div>
 
-        <div class="organizer-grid" data-grid>
-          <article class="organizer-card reveal" data-category="faculty">
+        <div class="organizer-grid reveal">
+          <article class="organizer-card" data-category="faculty">
             <img src="assets/images/organizers/mohammad-yaqub.jpg" alt="Mohammad Yaqub" />
             <div>
               <span class="role-chip">Faculty</span>
@@ -1209,7 +455,7 @@
               <span>MBZUAI</span>
             </div>
           </article>
-          <article class="organizer-card reveal" data-category="faculty">
+          <article class="organizer-card" data-category="faculty">
             <img src="assets/images/organizers/muhammad-haris.jpg" alt="Muhammad Haris" />
             <div>
               <span class="role-chip">Faculty</span>
@@ -1218,7 +464,7 @@
               <span>MBZUAI</span>
             </div>
           </article>
-          <article class="organizer-card reveal" data-category="faculty">
+          <article class="organizer-card" data-category="faculty">
             <img src="assets/images/organizers/muhammad-bilal.jpg" alt="Muhammad Bilal" />
             <div>
               <span class="role-chip">Faculty</span>
@@ -1227,7 +473,7 @@
               <span>Birmingham City University</span>
             </div>
           </article>
-          <article class="organizer-card reveal" data-category="faculty">
+          <article class="organizer-card" data-category="faculty">
             <img src="assets/images/organizers/dwarikanath-mahapatra.jpg" alt="Dwarikanath Mahapatra" />
             <div>
               <span class="role-chip">Faculty</span>
@@ -1236,7 +482,7 @@
               <span>Khalifa University</span>
             </div>
           </article>
-          <article class="organizer-card reveal" data-category="faculty">
+          <article class="organizer-card" data-category="faculty">
             <img src="assets/images/organizers/imran-razzak.jpg" alt="Imran Razzak" />
             <div>
               <span class="role-chip">Faculty</span>
@@ -1245,7 +491,7 @@
               <span>MBZUAI</span>
             </div>
           </article>
-          <article class="organizer-card reveal" data-category="faculty">
+          <article class="organizer-card" data-category="faculty">
             <img src="assets/images/organizers/yutong-xie.jpg" alt="Yutong Xie" />
             <div>
               <span class="role-chip">Faculty</span>
@@ -1254,55 +500,55 @@
               <span>MBZUAI</span>
             </div>
           </article>
-          <article class="organizer-card reveal" data-category="phd">
+          <article class="organizer-card" data-category="researcher">
             <img src="assets/images/organizers/rishabh-lalla.jpg" alt="Rishabh Lalla" />
             <div>
-              <span class="role-chip">PhD student</span>
+              <span class="role-chip">Researcher</span>
               <h3>Rishabh Lalla</h3>
               <p>Ph.D. Student</p>
               <span>MBZUAI</span>
             </div>
           </article>
-          <article class="organizer-card reveal" data-category="phd">
+          <article class="organizer-card" data-category="researcher">
             <img src="assets/images/organizers/ufaq-khan.jpg" alt="Ufaq Khan" />
             <div>
-              <span class="role-chip">PhD student</span>
+              <span class="role-chip">Researcher</span>
               <h3>Ufaq Khan</h3>
               <p>Ph.D. Student</p>
               <span>MBZUAI</span>
             </div>
           </article>
-          <article class="organizer-card reveal" data-category="phd">
+          <article class="organizer-card" data-category="researcher">
             <img src="assets/images/organizers/umair-nawaz.jpg" alt="Umair Nawaz" />
             <div>
-              <span class="role-chip">PhD student</span>
+              <span class="role-chip">Researcher</span>
               <h3>Umair Nawaz</h3>
               <p>Ph.D. Student</p>
               <span>MBZUAI</span>
             </div>
           </article>
-          <article class="organizer-card reveal" data-category="phd">
+          <article class="organizer-card" data-category="researcher">
             <img src="assets/images/organizers/namrah-rehman.jpg" alt="Namrah Rehman" />
             <div>
-              <span class="role-chip">PhD student</span>
+              <span class="role-chip">Researcher</span>
               <h3>Namrah Rehman</h3>
               <p>Ph.D. Student</p>
               <span>MBZUAI</span>
             </div>
           </article>
-          <article class="organizer-card reveal" data-category="phd">
+          <article class="organizer-card" data-category="researcher">
             <img src="assets/images/organizers/satyajit-kishore-tourani.jpg" alt="Satyajit Kishore Tourani" />
             <div>
-              <span class="role-chip">PhD student</span>
+              <span class="role-chip">Researcher</span>
               <h3>Satyajit Kishore Tourani</h3>
               <p>Ph.D. Student</p>
               <span>MBZUAI</span>
             </div>
           </article>
-          <article class="organizer-card reveal" data-category="postdoc">
+          <article class="organizer-card" data-category="researcher">
             <img src="assets/images/organizers/tausifa-jan-saleem.jpg" alt="Tausifa Jan Saleem" />
             <div>
-              <span class="role-chip">Postdoctoral</span>
+              <span class="role-chip">Researcher</span>
               <h3>Tausifa Jan Saleem</h3>
               <p>Postdoctoral Associate</p>
               <span>MBZUAI</span>
@@ -1313,116 +559,55 @@
     </section>
 
     <section class="section muted-section" id="submission">
-      <div class="container">
-        <div class="section-heading reveal">
-          <span class="section-kicker">Submission and review</span>
-          <h2>Two-track submission with a clear, rigorous review path</h2>
+      <div class="container submission-shell">
+        <div class="section-heading reveal center-heading">
+          <span class="section-kicker">Submission</span>
+          <h2>Clear, concise submission and review overview</h2>
           <p>
-            The review plan is intentionally easy to understand at a glance: two submission tracks,
-            double-blind OpenReview-based review, poster-first presentation, and oral selections for standout work.
+            The website keeps only the details visitors need quickly: contribution types, review standards, and what accepted authors can expect.
           </p>
         </div>
 
-        <div class="submission-layout reveal">
-          <div class="track-grid">
-            <article class="track-card">
-              <span class="track-label">Track 1</span>
-              <h3>Proceedings track</h3>
-              <p>Original work intended for the MICCAI Satellite Events joint Springer LNCS proceedings.</p>
-            </article>
-            <article class="track-card">
-              <span class="track-label">Track 2</span>
-              <h3>Non-archival track</h3>
-              <p>Extended abstracts, previously published work, or work under review elsewhere.</p>
-            </article>
+        <div class="submission-grid reveal">
+          <article class="submission-card">
+            <span class="mini-pill">Track 1</span>
+            <h3>Proceedings track</h3>
+            <p>Original work intended for the MICCAI satellite-events LNCS proceedings workflow.</p>
+          </article>
+          <article class="submission-card">
+            <span class="mini-pill">Track 2</span>
+            <h3>Non-archival track</h3>
+            <p>Extended abstracts, previously published work, or work under review elsewhere.</p>
+          </article>
+          <article class="submission-card wide">
+            <span class="mini-pill">Review principles</span>
+            <h3>Rigorous peer review with clear presentation outcomes</h3>
+            <ul>
+              <li>Double-blind review with conflict-of-interest safeguards</li>
+              <li>Evaluation on relevance, rigor, clarity, validation, and reproducibility</li>
+              <li>Poster presentation for accepted work, with selected oral highlights</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section cta-section">
+      <div class="container">
+        <div class="cta-shell glass reveal">
+          <div>
+            <span class="section-kicker">Ready to publish</span>
+            <h2>A clean live-ready one-page workshop site</h2>
+            <p>
+              This version is simplified, aligned, visually stronger, and focused on the message a MICCAI visitor should understand within a quick scan.
+            </p>
           </div>
-
-          <aside class="review-panel">
-            <div class="panel-top">
-              <span class="mini-kicker">Review framework</span>
-              <h3>How accepted work moves through the workshop</h3>
-            </div>
-            <div class="review-flow">
-              <article>
-                <strong>Double-blind review</strong>
-                <span>Each submission receives at least 2 reviews, and 3 when feasible.</span>
-              </article>
-              <article>
-                <strong>Meta-review oversight</strong>
-                <span>Senior PC or area chairs synthesize feedback and support decisions.</span>
-              </article>
-              <article>
-                <strong>Poster-first visibility</strong>
-                <span>All accepted work appears as a poster; a subset is selected for oral spotlight time.</span>
-              </article>
-              <article>
-                <strong>COI safeguards</strong>
-                <span>Conflicted organizers do not handle submissions from the same institution or recent collaborators.</span>
-              </article>
-            </div>
-            <div class="criteria-chips">
-              <span>Relevance</span>
-              <span>Technical rigor</span>
-              <span>Faithfulness</span>
-              <span>Clarity</span>
-              <span>Reproducibility</span>
-            </div>
-          </aside>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="outcomes">
-      <div class="container">
-        <div class="section-heading reveal">
-          <span class="section-kicker">Community outputs</span>
-          <h2>Resources intended to outlive the workshop day</h2>
-          <p>
-            MI4MedFM is positioned as a catalyst for a lasting MICCAI sub-community around mechanistic interpretability for MedFMs.
-          </p>
-        </div>
-
-        <div class="artifact-grid">
-          <article class="artifact-card reveal">
-            <h3>Open notebooks and baselines</h3>
-            <p>Practical starting points for applying mechanistic interpretability methods to MedFMs.</p>
-          </article>
-          <article class="artifact-card reveal">
-            <h3>Curated open problems and datasets</h3>
-            <p>A community list of priority gaps, candidate benchmarks, and clinically grounded evaluation settings.</p>
-          </article>
-          <article class="artifact-card reveal">
-            <h3>Post-workshop report</h3>
-            <p>A short synthesis of open questions, recommended benchmarks, and community next steps.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section faq-section" id="faq">
-      <div class="container">
-        <div class="section-heading reveal">
-          <span class="section-kicker">FAQ</span>
-          <h2>Quick answers for readers, attendees, and prospective authors</h2>
-        </div>
-
-        <div class="faq-grid reveal">
-          <details open>
-            <summary>Who should attend MI4MedFM?</summary>
-            <p>Researchers in medical imaging and clinical AI, clinicians, interpretability and safety researchers, and industry practitioners working with medical foundation models.</p>
-          </details>
-          <details>
-            <summary>What makes this workshop different from standard XAI or MedFM events?</summary>
-            <p>Its emphasis is on internal mechanisms, causal analysis, clinically grounded validation, and intervention-ready insight rather than only post-hoc explanation or benchmark performance.</p>
-          </details>
-          <details>
-            <summary>What kinds of submissions fit?</summary>
-            <p>Original proceedings-track papers, as well as non-archival extended abstracts, previously published work, or work currently under review elsewhere.</p>
-          </details>
-          <details>
-            <summary>How will accepted work be presented?</summary>
-            <p>All accepted work will appear as posters, with a subset selected for oral presentation based on review quality and topic balance.</p>
-          </details>
+          <div class="cta-tags" aria-hidden="true">
+            <span>Aligned sections</span>
+            <span>MICCAI styling cues</span>
+            <span>Single-speaker layout</span>
+            <span>Cleaner content hierarchy</span>
+          </div>
         </div>
       </div>
     </section>
@@ -1432,12 +617,12 @@
     <div class="container footer-shell">
       <div>
         <img class="footer-logo" src="assets/images/brand/logo-wordmark.png" alt="MI4MedFM" />
-        <p>Mechanistic Interpretability for Medical Foundation Models · Proposed workshop for MICCAI 2026 satellite events.</p>
+        <p>Mechanistic Interpretability for Medical Foundation Models at MICCAI 2026.</p>
       </div>
       <div class="footer-meta">
-        <span>Half-day · In-person</span>
+        <span>Half-day workshop</span>
+        <span>In-person satellite event</span>
         <span>Abu Dhabi, UAE</span>
-        <span>OpenReview-based workflow</span>
       </div>
     </div>
   </footer>
