@@ -10,6 +10,10 @@ const filterButtons = document.querySelectorAll('.filter-btn');
 const organizerCards = document.querySelectorAll('.organizer-card');
 const pillarTabs = document.querySelectorAll('.pillar-tab');
 
+/* ═══════════════════════════════════════════════════════════ */
+/*  PILLAR CONTENT                                             */
+/* ═══════════════════════════════════════════════════════════ */
+
 const pillarContent = {
   inspect: {
     label: 'Pillar 1',
@@ -74,6 +78,10 @@ function renderPillar(key) {
   pillarPoints.innerHTML = item.points.map((point) => `<li>${point}</li>`).join('');
 }
 
+/* ═══════════════════════════════════════════════════════════ */
+/*  MOBILE NAV                                                 */
+/* ═══════════════════════════════════════════════════════════ */
+
 if (navToggle && siteNav) {
   navToggle.addEventListener('click', () => {
     const expanded = navToggle.getAttribute('aria-expanded') === 'true';
@@ -88,6 +96,10 @@ if (navToggle && siteNav) {
     });
   });
 }
+
+/* ═══════════════════════════════════════════════════════════ */
+/*  SCROLL REVEAL                                              */
+/* ═══════════════════════════════════════════════════════════ */
 
 const revealObserver = new IntersectionObserver(
   (entries, observer) => {
@@ -104,6 +116,10 @@ const revealObserver = new IntersectionObserver(
 );
 
 reveals.forEach((element) => revealObserver.observe(element));
+
+/* ═══════════════════════════════════════════════════════════ */
+/*  ACTIVE NAV                                                 */
+/* ═══════════════════════════════════════════════════════════ */
 
 const sectionObserver = new IntersectionObserver(
   (entries) => {
@@ -123,6 +139,10 @@ const sectionObserver = new IntersectionObserver(
 
 sections.forEach((section) => sectionObserver.observe(section));
 
+/* ═══════════════════════════════════════════════════════════ */
+/*  PROGRESS BAR                                               */
+/* ═══════════════════════════════════════════════════════════ */
+
 function updateProgress() {
   const scrollTop = window.scrollY;
   const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
@@ -133,6 +153,10 @@ function updateProgress() {
 updateProgress();
 window.addEventListener('scroll', updateProgress, { passive: true });
 window.addEventListener('resize', updateProgress);
+
+/* ═══════════════════════════════════════════════════════════ */
+/*  ORGANIZER FILTERS                                          */
+/* ═══════════════════════════════════════════════════════════ */
 
 filterButtons.forEach((button) => {
   button.addEventListener('click', () => {
@@ -152,6 +176,10 @@ filterButtons.forEach((button) => {
   });
 });
 
+/* ═══════════════════════════════════════════════════════════ */
+/*  PILLAR TABS                                                */
+/* ═══════════════════════════════════════════════════════════ */
+
 pillarTabs.forEach((button) => {
   button.addEventListener('click', () => {
     const pillar = button.dataset.pillar;
@@ -167,3 +195,122 @@ pillarTabs.forEach((button) => {
 });
 
 renderPillar('inspect');
+
+/* ═══════════════════════════════════════════════════════════ */
+/*  HERO CANVAS — Neural Network Particle Animation            */
+/* ═══════════════════════════════════════════════════════════ */
+
+(function initHeroCanvas() {
+  const canvas = document.getElementById('hero-canvas');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+  let width, height, particles, animFrame;
+
+  const PARTICLE_COUNT = 60;
+  const CONNECTION_DIST = 140;
+  const COLORS = [
+    'rgba(65, 94, 243, 0.4)',
+    'rgba(14, 165, 233, 0.4)',
+    'rgba(191, 79, 232, 0.3)',
+    'rgba(19, 185, 129, 0.3)'
+  ];
+
+  function resize() {
+    const rect = canvas.parentElement.getBoundingClientRect();
+    const dpr = window.devicePixelRatio || 1;
+    width = rect.width;
+    height = rect.height;
+    canvas.width = width * dpr;
+    canvas.height = height * dpr;
+    canvas.style.width = width + 'px';
+    canvas.style.height = height + 'px';
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  }
+
+  function createParticles() {
+    particles = [];
+    for (let i = 0; i < PARTICLE_COUNT; i++) {
+      particles.push({
+        x: Math.random() * width,
+        y: Math.random() * height,
+        vx: (Math.random() - 0.5) * 0.5,
+        vy: (Math.random() - 0.5) * 0.5,
+        r: Math.random() * 2.5 + 1.5,
+        color: COLORS[Math.floor(Math.random() * COLORS.length)]
+      });
+    }
+  }
+
+  function draw() {
+    ctx.clearRect(0, 0, width, height);
+
+    // Draw connections
+    for (let i = 0; i < particles.length; i++) {
+      for (let j = i + 1; j < particles.length; j++) {
+        const dx = particles[i].x - particles[j].x;
+        const dy = particles[i].y - particles[j].y;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+        if (dist < CONNECTION_DIST) {
+          const alpha = (1 - dist / CONNECTION_DIST) * 0.15;
+          ctx.strokeStyle = `rgba(65, 94, 243, ${alpha})`;
+          ctx.lineWidth = 1;
+          ctx.beginPath();
+          ctx.moveTo(particles[i].x, particles[i].y);
+          ctx.lineTo(particles[j].x, particles[j].y);
+          ctx.stroke();
+        }
+      }
+    }
+
+    // Draw particles
+    for (const p of particles) {
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+      ctx.fillStyle = p.color;
+      ctx.fill();
+
+      // Glow
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.r * 3, 0, Math.PI * 2);
+      const grad = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, p.r * 3);
+      grad.addColorStop(0, p.color.replace(/[\d.]+\)$/, '0.08)'));
+      grad.addColorStop(1, 'transparent');
+      ctx.fillStyle = grad;
+      ctx.fill();
+    }
+  }
+
+  function update() {
+    for (const p of particles) {
+      p.x += p.vx;
+      p.y += p.vy;
+      if (p.x < 0 || p.x > width) p.vx *= -1;
+      if (p.y < 0 || p.y > height) p.vy *= -1;
+      p.x = Math.max(0, Math.min(width, p.x));
+      p.y = Math.max(0, Math.min(height, p.y));
+    }
+  }
+
+  function animate() {
+    update();
+    draw();
+    animFrame = requestAnimationFrame(animate);
+  }
+
+  // Respect reduced motion
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  if (prefersReducedMotion.matches) {
+    canvas.style.display = 'none';
+    return;
+  }
+
+  resize();
+  createParticles();
+  animate();
+
+  window.addEventListener('resize', () => {
+    resize();
+    // Re-distribute particles on large resize
+    if (particles.length !== PARTICLE_COUNT) createParticles();
+  });
+})();
