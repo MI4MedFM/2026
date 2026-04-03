@@ -1,0 +1,190 @@
+/* interactive.css */
+
+.interactive-section {
+    position: relative;
+    padding: 8rem 0;
+    overflow: hidden;
+    background: radial-gradient(circle at center, var(--bg-strong) 0%, var(--bg) 70%);
+}
+
+.interactive-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.interactive-header h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--text);
+    letter-spacing: -0.02em;
+}
+
+.interactive-header p {
+    color: var(--muted);
+    max-width: 600px;
+    margin: 0 auto 4rem;
+    font-size: 1.1rem;
+}
+
+/* 3D Model Showcase */
+.model-showcase {
+    position: relative;
+    height: 400px;
+    perspective: 1200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.model-showcase:hover .layer {
+    transform: rotateX(60deg) rotateZ(-30deg) translateZ(calc(var(--offset) * 1.8));
+    box-shadow: -20px 30px 60px rgba(0, 0, 0, 0.15), inset 0 0 30px rgba(255, 255, 255, 0.7);
+}
+
+.layer {
+    position: absolute;
+    width: 260px;
+    height: 260px;
+    background: rgba(255, 255, 255, 0.6);
+    border: 2px solid rgba(255, 255, 255, 0.9);
+    border-radius: 24px;
+    backdrop-filter: blur(12px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    transform-style: preserve-3d;
+    transform: rotateX(50deg) rotateZ(-20deg) translateZ(var(--offset));
+    transition: all 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.layer-1 {
+    --offset: -90px;
+    z-index: 1;
+    border-color: rgba(79, 70, 229, 0.3);
+}
+
+.layer-2 {
+    --offset: 0px;
+    z-index: 2;
+    border-color: rgba(14, 165, 233, 0.3);
+}
+
+.layer-3 {
+    --offset: 90px;
+    z-index: 3;
+    background: linear-gradient(135deg, rgba(79, 70, 229, 0.1), rgba(217, 70, 239, 0.1));
+    border-color: rgba(217, 70, 239, 0.4);
+}
+
+.layer-node-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    opacity: 0.6;
+}
+
+.node {
+    width: 14px;
+    height: 14px;
+    background: var(--primary);
+    border-radius: 50%;
+    box-shadow: 0 0 10px var(--primary);
+}
+
+.layer:hover {
+    background: rgba(255, 255, 255, 0.95);
+    border-color: var(--primary);
+    cursor: crosshair;
+}
+
+.layer:hover .layer-node-grid {
+    opacity: 1;
+}
+
+.layer:hover .node {
+    animation: node-flash 1s infinite alternate;
+}
+
+.layer-label {
+    position: absolute;
+    bottom: -40px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: var(--muted-strong);
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 0.4s ease;
+    background: white;
+    padding: 6px 14px;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    white-space: nowrap;
+}
+
+.layer:hover .layer-label {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.connection-beam {
+    position: absolute;
+    width: 4px;
+    height: 140px;
+    background: linear-gradient(to bottom, var(--primary), var(--secondary));
+    opacity: 0;
+    transform-origin: bottom center;
+    transition: opacity 0.5s ease;
+    z-index: 5;
+    border-radius: 2px;
+    box-shadow: 0 0 10px var(--primary);
+}
+
+.model-showcase:hover .connection-beam {
+    opacity: 0.8;
+    animation: data-pulse 2s infinite;
+}
+
+@keyframes node-flash {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 5px var(--primary);
+    }
+
+    100% {
+        transform: scale(1.5);
+        box-shadow: 0 0 20px var(--primary), 0 0 40px var(--accent);
+        background: var(--accent);
+    }
+}
+
+@keyframes data-pulse {
+    0% {
+        background-position: 0% 0%;
+    }
+
+    100% {
+        background-position: 0% 200%;
+    }
+}
+
+.interactive-tooltip {
+    margin-top: 2rem;
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background: rgba(15, 23, 42, 0.05);
+    border-radius: 999px;
+    color: var(--text);
+    font-weight: 600;
+    font-size: 0.95rem;
+    border: 1px solid rgba(15, 23, 42, 0.1);
+    letter-spacing: 0.5px;
+}
+
+.interactive-tooltip i {
+    color: var(--primary);
+    margin-right: 8px;
+}

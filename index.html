@@ -1,0 +1,892 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MI4MedFM | Mechanistic Interpretability for Medical Foundation Models — MICCAI 2026</title>
+  <meta name="description"
+    content="MI4MedFM is a MICCAI 2026 workshop on mechanistic interpretability for medical foundation models, focused on internal analysis, validation, debugging, and safer clinical deployment." />
+  <link rel="icon" type="image/png" href="assets/images/brand/favicon.png" />
+  <link rel="preload" as="image" href="assets/images/brand/logo-wordmark.png" />
+  <link rel="preload" as="image" href="assets/images/speakers/karim-lekadir.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="interactive.css" />
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="progress-bar" aria-hidden="true"></div>
+
+  <header class="site-header" id="top">
+    <div class="container nav-shell">
+      <a class="brand" href="#top" aria-label="MI4MedFM home">
+        <img src="assets/images/brand/logo-wordmark.png" alt="MI4MedFM" />
+      </a>
+
+      <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="site-nav" id="site-nav" aria-label="Primary">
+        <a href="#overview">Overview</a>
+        <a href="#news">News</a>
+        <a href="#pillars">Focus</a>
+        <a href="#topics">Topics</a>
+        <a href="#program">Program</a>
+        <a href="#speakers">Speaker</a>
+        <a href="#submission">Call for Papers</a>
+        <a href="#organizers">Organizers</a>
+        <a href="#faq-contact">Queries</a>
+        <img src="assets/images/brand/miccai2026-logo-new.png" alt="MICCAI 2026" class="nav-miccai-logo" />
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ╔══════════════════════════════════════════════════════════╗ -->
+    <!-- ║                     HERO SECTION                        ║ -->
+    <!-- ╚══════════════════════════════════════════════════════════╝ -->
+    <section class="hero section">
+      <canvas id="hero-canvas" aria-hidden="true"></canvas>
+      <div class="container hero-centered">
+
+
+        <div class="hero-copy-centered reveal">
+          <h1><span class="interactive-title">MI4MedFM</span> | MICCAI 2026</h1>
+          <h2 class="hero-title-sub">Mechanistic Interpretability for Medical Foundation Models</h2>
+
+          <p class="hero-subtitle-centered">
+            MI4MedFM is a workshop held in conjunction with MICCAI 2026. It focuses on understanding how medical
+            foundation models compute, where they fail, and how mechanistic interpretability can make them safer, more
+            robust, and more reliable for clinical deployment.
+          </p>
+
+          <div class="hero-actions-centered">
+            <a class="btn btn-primary" href="#submission">Submit a paper</a>
+            <a class="btn btn-secondary-outline" href="#program">View program</a>
+          </div>
+        </div>
+
+        <div class="hero-visual-centered reveal">
+          <div class="hero-viz-card glass">
+            <div class="viz-header">
+              <span class="mini-pill">How MI4MedFM views Medical Foundation Models</span>
+            </div>
+            <div class="viz-pipeline">
+              <div class="viz-stage">
+                <div class="viz-icon viz-icon-input">
+                  <img src="assets/images/sample-scan.png" alt="Medical Scan" />
+                </div>
+                <span>Medical Image</span>
+              </div>
+              <div class="viz-arrow">
+                <svg width="48" height="24" viewBox="0 0 48 24">
+                  <path d="M0 12h42M36 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </div>
+              <div class="viz-stage viz-stage-model">
+                <div class="viz-model-block">
+                  <span class="viz-model-label">MedFM</span>
+                  <div class="viz-layers">
+                    <div class="viz-layer-bar"></div>
+                    <div class="viz-layer-bar active"></div>
+                    <div class="viz-layer-bar"></div>
+                  </div>
+                  <div class="viz-magnifier">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                      stroke-width="2.5">
+                      <circle cx="11" cy="11" r="7" />
+                      <line x1="16.5" y1="16.5" x2="21" y2="21" />
+                    </svg>
+                  </div>
+                </div>
+                <span>Internal Analysis</span>
+              </div>
+              <div class="viz-arrow">
+                <svg width="48" height="24" viewBox="0 0 48 24">
+                  <path d="M0 12h42M36 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </div>
+              <div class="viz-stage">
+                <div class="viz-icon viz-icon-output">
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M9 12l2 2 4-4" />
+                    <circle cx="12" cy="12" r="10" />
+                  </svg>
+                </div>
+                <span>Prediction + Mechanism</span>
+              </div>
+            </div>
+
+            <div class="viz-pillars-row">
+              <div class="viz-pillar-chip inspect">
+                <span class="viz-dot"></span>
+                <div>
+                  <strong>Inspect</strong>
+                  <p>Features, circuits, activations</p>
+                </div>
+              </div>
+              <div class="viz-pillar-chip validate">
+                <span class="viz-dot"></span>
+                <div>
+                  <strong>Validate</strong>
+                  <p>Clinical alignment & faithfulness</p>
+                </div>
+              </div>
+              <div class="viz-pillar-chip intervene">
+                <span class="viz-dot"></span>
+                <div>
+                  <strong>Intervene</strong>
+                  <p>Debugging, steering, monitoring</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ╔══════════════════════════════════════════════════════════╗ -->
+    <!-- ║                       NEWS SECTION                      ║ -->
+    <!-- ╚══════════════════════════════════════════════════════════╝ -->
+    <section class="section muted-section" id="news">
+      <div class="container">
+        <div class="section-heading reveal">
+          <span class="section-kicker">Updates</span>
+          <h2>News</h2>
+        </div>
+        <div class="news-list reveal">
+          <article class="news-item">
+            <div class="news-date">Mar 30, 2026</div>
+            <div class="news-content">
+              <strong>Website Launched</strong>
+              <p>The official website for the MI4MedFM workshop at MICCAI 2026 is now live. Call for papers and
+                important dates have been announced.</p>
+            </div>
+          </article>
+          <article class="news-item">
+            <div class="news-date">Mar 25, 2026</div>
+            <div class="news-content">
+              <strong>Workshop Accepted</strong>
+              <p>MI4MedFM has been officially accepted as a workshop at MICCAI 2026 in Abu Dhabi.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ╔══════════════════════════════════════════════════════════╗ -->
+    <!-- ║                    OVERVIEW SECTION                     ║ -->
+    <!-- ╚══════════════════════════════════════════════════════════╝ -->
+    <section class="section" id="overview">
+      <div class="container overview-grid">
+        <div class="section-copy reveal">
+          <span class="section-kicker">Overview</span>
+          <h2>Why this workshop matters now</h2>
+          <p>
+            Medical foundation models are becoming central to imaging and multimodal clinical AI, but high-stakes
+            deployment needs more than saliency maps or attention plots. MI4MedFM centers mechanistic interpretability:
+            understanding the internal computations that generate model behavior.
+          </p>
+          <p>
+            The workshop creates a focused MICCAI forum for methods such as sparse autoencoders, circuit discovery,
+            activation patching, causal tracing, steering, and weight-space analysis — while keeping the discussion
+            tightly connected to clinical validity, robustness, and deployment safety.
+          </p>
+        </div>
+
+        <aside class="overview-card glass reveal">
+          <div class="card-heading">
+            <span class="mini-pill">At a glance</span>
+            <h3>Workshop Profile</h3>
+          </div>
+          <div class="stat-list">
+            <article>
+              <strong>Audience</strong>
+              <p>MICCAI researchers, clinicians, safety researchers, and industry teams working on medical AI.</p>
+            </article>
+            <article>
+              <strong>Format</strong>
+              <p>Keynote talk, contributed oral presentations, poster session, and networking — in a focused 2-hour
+                program.</p>
+            </article>
+            <article>
+              <strong>Value</strong>
+              <p>A clear bridge from internal model analysis to evidence, intervention, and trustworthy clinical use.
+              </p>
+            </article>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ╔══════════════════════════════════════════════════════════╗ -->
+    <!-- ║                 WORKSHOP FOCUS / PILLARS                ║ -->
+    <!-- ╚══════════════════════════════════════════════════════════╝ -->
+    <section class="section" id="pillars">
+      <div class="container pillars-layout">
+        <div class="section-heading reveal">
+          <span class="section-kicker">Workshop Focus</span>
+          <h2>Four Core Pillars of MI4MedFM</h2>
+          <p>
+            Our scientific agenda is structured around four interlocking goals that translate mechanistic
+            interpretability into robust clinical practice.
+          </p>
+        </div>
+
+        <div class="pillar-shell reveal">
+          <div class="pillar-tabs" role="tablist" aria-label="Workshop pillars">
+            <button class="pillar-tab active" role="tab" aria-selected="true" data-pillar="inspect">Inspect</button>
+            <button class="pillar-tab" role="tab" aria-selected="false" data-pillar="validate">Validate</button>
+            <button class="pillar-tab" role="tab" aria-selected="false" data-pillar="debug">Debug</button>
+            <button class="pillar-tab" role="tab" aria-selected="false" data-pillar="intervene">Intervene</button>
+          </div>
+
+          <div class="pillar-panel glass">
+            <div class="pillar-copy">
+              <span class="mini-pill" id="pillar-label">Pillar 1</span>
+              <h3 id="pillar-title">Inspect internal model mechanisms</h3>
+              <p id="pillar-text">
+                Understand what features, subcircuits, and latent representations medical foundation models rely on when
+                producing clinically relevant behavior.
+              </p>
+              <ul id="pillar-points">
+                <li>Sparse autoencoders and feature discovery</li>
+                <li>Circuit analysis and causal tracing</li>
+                <li>Activation-level understanding of decision pathways</li>
+              </ul>
+            </div>
+
+            <div class="pillar-visual" aria-hidden="true">
+              <div class="visual-ring ring-1"></div>
+              <div class="visual-ring ring-2"></div>
+              <div class="visual-core">
+                <span id="pillar-core-title">Inspect</span>
+              </div>
+              <div class="visual-node node-a"></div>
+              <div class="visual-node node-b"></div>
+              <div class="visual-node node-c"></div>
+              <div class="visual-node node-d"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ╔══════════════════════════════════════════════════════════╗ -->
+    <!-- ║              INTERACTIVE 3D VISUALIZATION               ║ -->
+    <!-- ╚══════════════════════════════════════════════════════════╝ -->
+    <section class="section interactive-section">
+      <div class="container interactive-container reveal">
+        <div class="interactive-header">
+          <h2>Interactive 3D Layer Analysis</h2>
+          <p>Hover over the foundation model representation below to expand the hidden layers and inspect the
+            mechanistic computations driving clinical predictions.</p>
+        </div>
+        <div class="model-showcase">
+          <div class="layer layer-3">
+            <div class="layer-label">Final Output & Concepts</div>
+            <div class="layer-node-grid">
+              <div class="node"></div>
+              <div class="node"></div>
+              <div class="node"></div>
+              <div class="node"></div>
+              <div class="node"></div>
+              <div class="node"></div>
+              <div class="node"></div>
+              <div class="node"></div>
+              <div class="node"></div>
+            </div>
+          </div>
+          <div class="layer layer-2">
+            <div class="layer-label">Sparse Autoencoder Features</div>
+            <div class="layer-node-grid">
+              <div class="node"></div>
+              <div class="node"></div>
+              <div class="node"></div>
+              <div class="node"></div>
+              <div class="node"></div>
+              <div class="node"></div>
+              <div class="node"></div>
+              <div class="node"></div>
+              <div class="node"></div>
+            </div>
+            <div class="connection-beam" style="bottom: 100%; left: 30%;"></div>
+            <div class="connection-beam" style="bottom: 100%; right: 30%;"></div>
+          </div>
+          <div class="layer layer-1">
+            <div class="layer-label">Early Attention Heads</div>
+            <div class="layer-node-grid">
+              <div class="node"></div>
+              <div class="node"></div>
+              <div class="node"></div>
+              <div class="node"></div>
+              <div class="node"></div>
+              <div class="node"></div>
+              <div class="node"></div>
+              <div class="node"></div>
+              <div class="node"></div>
+            </div>
+            <div class="connection-beam" style="bottom: 100%; left: 50%;"></div>
+          </div>
+        </div>
+        <div class="interactive-tooltip">
+          <i>🔍</i> Hover over the network to reveal layers
+        </div>
+      </div>
+    </section>
+
+    <!-- ╔══════════════════════════════════════════════════════════╗ -->
+    <!-- ║                   TOPICS OF INTEREST                    ║ -->
+    <!-- ╚══════════════════════════════════════════════════════════╝ -->
+    <section class="section muted-section" id="topics">
+      <div class="container">
+        <div class="section-heading reveal center-heading">
+          <span class="section-kicker">Topics</span>
+          <h2>Topics of Interest</h2>
+          <p>
+            We welcome submissions across a wide range of themes bridging foundation model interpretability with safety
+            and deployment.
+          </p>
+        </div>
+
+        <div class="topic-grid refined reveal">
+          <article class="topic-card">
+            <span class="topic-label">Mechanisms</span>
+            <h3>Features, circuits, and internal representations</h3>
+            <p>Methods that uncover what medical models internally encode and how those computations are organized.</p>
+            <div class="topic-bar"><span style="width: 88%"></span></div>
+          </article>
+          <article class="topic-card">
+            <span class="topic-label">Faithfulness</span>
+            <h3>Clinically meaningful validation</h3>
+            <p>Tests that determine whether discovered mechanisms align with trusted medical concepts and downstream
+              behavior.</p>
+            <div class="topic-bar"><span style="width: 82%"></span></div>
+          </article>
+          <article class="topic-card">
+            <span class="topic-label">Failures</span>
+            <h3>Spurious cues, shortcuts, and hallucinations</h3>
+            <p>Mechanistic debugging for brittle reasoning, domain shift, bias, and unreliable multimodal outputs.</p>
+            <div class="topic-bar"><span style="width: 79%"></span></div>
+          </article>
+          <article class="topic-card">
+            <span class="topic-label">Intervention</span>
+            <h3>Editing, steering, and control</h3>
+            <p>Using mechanism-level insight to improve robustness, correct behavior, and reduce harmful failure modes.
+            </p>
+            <div class="topic-bar"><span style="width: 84%"></span></div>
+          </article>
+          <article class="topic-card">
+            <span class="topic-label">Deployment</span>
+            <h3>Monitoring unsafe states in practice</h3>
+            <p>Interpretability-guided monitoring and uncertainty-aware signals for safer clinical deployment settings.
+            </p>
+            <div class="topic-bar"><span style="width: 74%"></span></div>
+          </article>
+          <article class="topic-card">
+            <span class="topic-label">Tooling</span>
+            <h3>Scalable, usable open infrastructure</h3>
+            <p>Frameworks and workflows that make mechanistic analysis practical for medical imaging and multimodal
+              MedFMs.</p>
+            <div class="topic-bar"><span style="width: 76%"></span></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ╔══════════════════════════════════════════════════════════╗ -->
+    <!-- ║                   WORKSHOP PROGRAM                      ║ -->
+    <!-- ╚══════════════════════════════════════════════════════════╝ -->
+    <section class="section" id="program">
+      <div class="container">
+        <div class="section-heading reveal center-heading">
+          <span class="section-kicker">Program</span>
+          <h2>Workshop Program</h2>
+          <p>
+            A focused 2-hour program featuring a keynote, oral presentations, and an interactive poster session with
+            networking.
+          </p>
+        </div>
+
+        <div class="program-shell">
+          <div class="program-highlights reveal">
+            <article>
+              <strong>Keynote</strong>
+              <p>An invited talk framing trustworthy medical AI through the lens of mechanism and evidence.</p>
+            </article>
+            <article>
+              <strong>Oral Presentations</strong>
+              <p>Selected papers presented in concise oral sessions built for cross-disciplinary accessibility.</p>
+            </article>
+            <article>
+              <strong>Poster & Networking</strong>
+              <p>Poster-first visibility, direct discussion, and opportunities for clinicians and ML researchers to
+                connect.</p>
+            </article>
+          </div>
+
+          <div class="schedule reveal">
+            <article class="schedule-item">
+              <span class="schedule-time">09:00</span>
+              <div class="schedule-card">
+                <h3>Opening & Framing</h3>
+                <p>Setting the agenda, scientific motivation, and workshop goals for the MICCAI audience.</p>
+              </div>
+            </article>
+            <article class="schedule-item keynote">
+              <span class="schedule-time">09:10</span>
+              <div class="schedule-card">
+                <h3>Keynote Session</h3>
+                <p>Flagship invited talk on trustworthy medical AI, interpretability, and clinical reliability.</p>
+              </div>
+            </article>
+            <article class="schedule-item">
+              <span class="schedule-time">09:50</span>
+              <div class="schedule-card">
+                <h3>Oral Presentations</h3>
+                <p>Curated short talks presenting methods, evaluations, and lessons for medical foundation models.</p>
+              </div>
+            </article>
+            <article class="schedule-item break-item">
+              <span class="schedule-time">10:30</span>
+              <div class="schedule-card">
+                <h3>Coffee Break & Poster Session</h3>
+                <p>Networking, poster interaction, demos, and in-depth discussion around methods and applications.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ╔══════════════════════════════════════════════════════════╗ -->
+    <!-- ║                   KEYNOTE SPEAKER                       ║ -->
+    <!-- ╚══════════════════════════════════════════════════════════╝ -->
+    <section class="section muted-section" id="speakers">
+      <div class="container speaker-section-inner">
+        <div class="section-heading reveal center-heading narrow-heading">
+          <span class="section-kicker">Keynote Speaker</span>
+          <h2>Keynote Speaker</h2>
+          <p>We are honored to feature leading experts in trustworthy and transparent clinical AI.</p>
+        </div>
+
+        <div class="speaker-grid single reveal">
+          <article class="speaker-card">
+            <div class="speaker-image-wrap">
+              <img src="assets/images/speakers/karim-lekadir.jpg" alt="Karim Lekadir" />
+            </div>
+            <div class="speaker-copy">
+              <span class="mini-pill">Keynote Speaker</span>
+              <h3>Karim Lekadir</h3>
+              <p class="speaker-role">Trustworthy medical AI researcher</p>
+              <p>
+                His pioneering research bridges deep learning robustness with ethical clinical translation, establishing
+                critical benchmarks for fairness and certainty in medical deployments.
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ╔══════════════════════════════════════════════════════════╗ -->
+    <!-- ║                   CALL FOR PAPERS                       ║ -->
+    <!-- ╚══════════════════════════════════════════════════════════╝ -->
+    <section class="section" id="submission">
+      <div class="container">
+        <div class="section-heading reveal center-heading">
+          <span class="section-kicker">Call for Papers</span>
+          <h2>Call for Papers</h2>
+          <p>
+            We invite original research contributions on mechanistic interpretability for medical foundation models.
+            Submissions are welcomed across two tracks.
+          </p>
+        </div>
+
+        <!-- Important Dates -->
+        <div class="dates-timeline reveal">
+          <h3 class="dates-title">Important Dates</h3>
+          <div class="dates-grid">
+            <article class="date-card">
+              <div class="date-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
+                  <polyline points="14 2 14 8 20 8" />
+                  <line x1="16" y1="13" x2="8" y2="13" />
+                  <line x1="16" y1="17" x2="8" y2="17" />
+                  <polyline points="10 9 9 9 8 9" />
+                </svg>
+              </div>
+              <div>
+                <strong>Paper Submission Deadline</strong>
+                <p>TBA</p>
+              </div>
+            </article>
+            <article class="date-card">
+              <div class="date-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M22 11.08V12a10 10 0 11-5.93-9.14" />
+                  <polyline points="22 4 12 14.01 9 11.01" />
+                </svg>
+              </div>
+              <div>
+                <strong>Author Notification</strong>
+                <p>TBA</p>
+              </div>
+            </article>
+            <article class="date-card">
+              <div class="date-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7" />
+                  <path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z" />
+                </svg>
+              </div>
+              <div>
+                <strong>Camera-Ready Deadline</strong>
+                <p>TBA</p>
+              </div>
+            </article>
+            <article class="date-card highlight">
+              <div class="date-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+                  <line x1="16" y1="2" x2="16" y2="6" />
+                  <line x1="8" y1="2" x2="8" y2="6" />
+                  <line x1="3" y1="10" x2="21" y2="10" />
+                </svg>
+              </div>
+              <div>
+                <strong>Workshop Date</strong>
+                <p>TBA</p>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <!-- Submission Tracks -->
+        <div class="submission-tracks reveal">
+          <article class="track-card">
+            <div class="track-header">
+              <span class="track-number">Track 1</span>
+              <h3>Proceedings Track</h3>
+            </div>
+            <p class="track-desc">Original, unpublished research intended for the MICCAI satellite-events LNCS
+              proceedings.</p>
+            <ul class="track-details">
+              <li><strong>Format:</strong> 8–10 pages (LNCS style) + references</li>
+              <li><strong>Review:</strong> Double-blind peer review</li>
+              <li><strong>Publication:</strong> Springer LNCS proceedings</li>
+            </ul>
+          </article>
+          <article class="track-card">
+            <div class="track-header">
+              <span class="track-number">Track 2</span>
+              <h3>Non-Archival Track</h3>
+            </div>
+            <p class="track-desc">Extended abstracts, previously published work, or work currently under review
+              elsewhere.</p>
+            <ul class="track-details">
+              <li><strong>Format:</strong> 4-page extended abstract + references</li>
+              <li><strong>Review:</strong> Light review for relevance and quality</li>
+              <li><strong>Publication:</strong> Not included in proceedings (non-archival)</li>
+            </ul>
+          </article>
+        </div>
+
+        <!-- Submission Guidelines -->
+        <div class="submission-guidelines reveal">
+          <div class="guidelines-card glass">
+            <h3>Submission Guidelines</h3>
+            <div class="guidelines-grid">
+              <div class="guideline-item">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
+                  <polyline points="14 2 14 8 20 8" />
+                </svg>
+                <div>
+                  <strong>Template</strong>
+                  <p>Use the official Springer LNCS LaTeX template</p>
+                </div>
+              </div>
+              <div class="guideline-item">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" />
+                  <circle cx="9" cy="7" r="4" />
+                  <path d="M23 21v-2a4 4 0 00-3-3.87" />
+                  <path d="M16 3.13a4 4 0 010 7.75" />
+                </svg>
+                <div>
+                  <strong>Review Process</strong>
+                  <p>Double-blind with conflict-of-interest safeguards</p>
+                </div>
+              </div>
+              <div class="guideline-item">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="16 18 22 12 16 6" />
+                  <polyline points="8 6 2 12 8 18" />
+                </svg>
+                <div>
+                  <strong>Evaluation Criteria</strong>
+                  <p>Relevance, rigor, clarity, validation, and reproducibility</p>
+                </div>
+              </div>
+              <div class="guideline-item">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="10" />
+                  <line x1="2" y1="12" x2="22" y2="12" />
+                  <path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z" />
+                </svg>
+                <div>
+                  <strong>Submission Portal</strong>
+                  <p>Link to CMT / OpenReview — TBA</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Topics Summary -->
+        <div class="topics-summary reveal" style="margin-top: 2rem;">
+          <div class="guidelines-card glass">
+            <h3>Topics include, but are not limited to:</h3>
+            <div class="track-details"
+              style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem; margin-top: 1rem;">
+              <div
+                style="padding: 1rem; display: flex; align-items: flex-start; gap: 0.8rem; background: rgba(248, 250, 254, 0.8); border: 1px solid rgba(15, 23, 42, 0.05); border-radius: 12px;">
+                <span style="color: var(--primary); font-size: 1.2rem; line-height: 1;">•</span>
+                <span style="font-size: 0.9rem; color: var(--muted-strong);"><strong>Internal Mechanisms:</strong>
+                  Sparse autoencoders, circuit analysis, feature discovery</span>
+              </div>
+              <div
+                style="padding: 1rem; display: flex; align-items: flex-start; gap: 0.8rem; background: rgba(248, 250, 254, 0.8); border: 1px solid rgba(15, 23, 42, 0.05); border-radius: 12px;">
+                <span style="color: var(--primary); font-size: 1.2rem; line-height: 1;">•</span>
+                <span style="font-size: 0.9rem; color: var(--muted-strong);"><strong>Clinical Validation:</strong>
+                  Faithfulness, concept alignment, clinically grounded benchmarks</span>
+              </div>
+              <div
+                style="padding: 1rem; display: flex; align-items: flex-start; gap: 0.8rem; background: rgba(248, 250, 254, 0.8); border: 1px solid rgba(15, 23, 42, 0.05); border-radius: 12px;">
+                <span style="color: var(--primary); font-size: 1.2rem; line-height: 1;">•</span>
+                <span style="font-size: 0.9rem; color: var(--muted-strong);"><strong>Failure Modes:</strong> Tracing
+                  shortcuts, multimodal hallucinations, bias detection</span>
+              </div>
+              <div
+                style="padding: 1rem; display: flex; align-items: flex-start; gap: 0.8rem; background: rgba(248, 250, 254, 0.8); border: 1px solid rgba(15, 23, 42, 0.05); border-radius: 12px;">
+                <span style="color: var(--primary); font-size: 1.2rem; line-height: 1;">•</span>
+                <span style="font-size: 0.9rem; color: var(--muted-strong);"><strong>Interventions:</strong> Feature
+                  steering, debugging, robust editing, inference monitoring</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ╔══════════════════════════════════════════════════════════╗ -->
+    <!-- ║                     ORGANIZERS                          ║ -->
+    <!-- ╚══════════════════════════════════════════════════════════╝ -->
+    <section class="section muted-section" id="organizers">
+      <div class="container">
+        <div class="section-heading reveal center-heading">
+          <span class="section-kicker">Organizers</span>
+          <h2>Organizing Committee</h2>
+          <p>
+            Our international committee unites expertise in medical image analysis, foundation models, and trustworthy
+            artificial intelligence.
+          </p>
+        </div>
+
+        <div class="filter-bar reveal" role="tablist" aria-label="Organizer filters">
+          <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true">All</button>
+          <button class="filter-btn" data-filter="faculty" role="tab" aria-selected="false">Faculty</button>
+          <button class="filter-btn" data-filter="researcher" role="tab" aria-selected="false">Researchers</button>
+        </div>
+
+        <div class="organizer-grid reveal">
+          <article class="organizer-card" data-category="faculty">
+            <img src="assets/images/organizers/mohammad-yaqub.jpg" alt="Mohammad Yaqub" />
+            <div>
+              <span class="role-chip">Faculty</span>
+              <h3>Mohammad Yaqub</h3>
+              <p>Associate Professor</p>
+              <span>MBZUAI</span>
+            </div>
+          </article>
+          <article class="organizer-card" data-category="faculty">
+            <img src="assets/images/organizers/muhammad-haris.jpg" alt="Muhammad Haris" />
+            <div>
+              <span class="role-chip">Faculty</span>
+              <h3>Muhammad Haris</h3>
+              <p>Assistant Professor</p>
+              <span>MBZUAI</span>
+            </div>
+          </article>
+          <article class="organizer-card" data-category="faculty">
+            <img src="assets/images/organizers/muhammad-bilal.jpg" alt="Muhammad Bilal" />
+            <div>
+              <span class="role-chip">Faculty</span>
+              <h3>Muhammad Bilal</h3>
+              <p>Professor</p>
+              <span>Birmingham City University</span>
+            </div>
+          </article>
+          <article class="organizer-card" data-category="faculty">
+            <img src="assets/images/organizers/dwarikanath-mahapatra.jpg" alt="Dwarikanath Mahapatra" />
+            <div>
+              <span class="role-chip">Faculty</span>
+              <h3>Dwarikanath Mahapatra</h3>
+              <p>Assistant Professor</p>
+              <span>Khalifa University</span>
+            </div>
+          </article>
+          <article class="organizer-card" data-category="faculty">
+            <img src="assets/images/organizers/imran-razzak.jpg" alt="Imran Razzak" />
+            <div>
+              <span class="role-chip">Faculty</span>
+              <h3>Imran Razzak</h3>
+              <p>Associate Professor</p>
+              <span>MBZUAI</span>
+            </div>
+          </article>
+          <article class="organizer-card" data-category="faculty">
+            <img src="assets/images/organizers/yutong-xie.jpg" alt="Yutong Xie" />
+            <div>
+              <span class="role-chip">Faculty</span>
+              <h3>Yutong Xie</h3>
+              <p>Assistant Professor</p>
+              <span>MBZUAI</span>
+            </div>
+          </article>
+          <article class="organizer-card" data-category="researcher">
+            <img src="assets/images/organizers/ufaq-khan.jpg" alt="Ufaq Khan" />
+            <div>
+              <span class="role-chip">Researcher</span>
+              <h3>Ufaq Khan</h3>
+              <p>Ph.D. Student</p>
+              <span>MBZUAI</span>
+            </div>
+          </article>
+          <article class="organizer-card" data-category="researcher">
+            <img src="assets/images/organizers/rishabh-lalla.jpg" alt="Rishabh Lalla" />
+            <div>
+              <span class="role-chip">Researcher</span>
+              <h3>Rishabh Lalla</h3>
+              <p>Ph.D. Student</p>
+              <span>MBZUAI</span>
+            </div>
+          </article>
+          <article class="organizer-card" data-category="researcher">
+            <img src="assets/images/organizers/umair-nawaz.jpg" alt="Umair Nawaz" />
+            <div>
+              <span class="role-chip">Researcher</span>
+              <h3>Umair Nawaz</h3>
+              <p>Ph.D. Student</p>
+              <span>MBZUAI</span>
+            </div>
+          </article>
+          <article class="organizer-card" data-category="researcher">
+            <img src="assets/images/organizers/namrah-rehman.jpg" alt="Namrah Rehman" />
+            <div>
+              <span class="role-chip">Researcher</span>
+              <h3>Namrah Rehman</h3>
+              <p>Ph.D. Student</p>
+              <span>MBZUAI</span>
+            </div>
+          </article>
+          <article class="organizer-card" data-category="researcher">
+            <img src="assets/images/organizers/satyajit-kishore-tourani.jpg" alt="Satyajit Kishore Tourani" />
+            <div>
+              <span class="role-chip">Researcher</span>
+              <h3>Satyajit Kishore Tourani</h3>
+              <p>Ph.D. Student</p>
+              <span>MBZUAI</span>
+            </div>
+          </article>
+          <article class="organizer-card" data-category="researcher">
+            <img src="assets/images/organizers/tausifa-jan-saleem.jpg" alt="Tausifa Jan Saleem" />
+            <div>
+              <span class="role-chip">Researcher</span>
+              <h3>Tausifa Jan Saleem</h3>
+              <p>Postdoctoral Associate</p>
+              <span>MBZUAI</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ╔══════════════════════════════════════════════════════════╗ -->
+    <!-- ║                     FAQ & CONTACT                       ║ -->
+    <!-- ╚══════════════════════════════════════════════════════════╝ -->
+    <section class="section" id="faq-contact">
+      <div class="container faq-shell">
+        <div class="section-heading reveal center-heading">
+          <span class="section-kicker">Queries</span>
+          <h2>FAQ & Contact</h2>
+          <p>Common questions about the workshop and how to reach the organizing committee.</p>
+        </div>
+
+        <div class="faq-grid reveal">
+          <div class="faq-list">
+            <details class="faq-item" open>
+              <summary>When is the workshop taking place?</summary>
+              <p>The MI4MedFM workshop is part of the MICCAI 2026 satellite events in Abu Dhabi. The exact date in
+                October is TBA.</p>
+            </details>
+            <details class="faq-item">
+              <summary>Will proceedings be published?</summary>
+              <p>Yes. Submissions accepted under Track 1 (Proceedings Track) will be published in the official Springer
+                LNCS MICCAI 2026 Workshop Proceedings.</p>
+            </details>
+            <details class="faq-item">
+              <summary>Can I submit previously published work?</summary>
+              <p>For Track 1 (Proceedings Track), submissions must be original and unpublished. For Track 2
+                (Non-Archival Track), you are welcome to submit extended abstracts of recently published work or work
+                currently under review elsewhere.</p>
+            </details>
+          </div>
+
+          <div class="contact-card glass">
+            <h3>Contact Us</h3>
+            <p>If you have any further questions regarding the workshop, submission guidelines, or sponsorship
+              opportunities, please feel free to email the organizing committee.</p>
+            <a href="mailto:mi4medfm.info@gmail.com" class="btn btn-primary"
+              style="margin-top: 1rem; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.2rem;">
+              <span>Email Organizers</span>
+              <span style="font-size: 0.85rem; font-weight: 500; opacity: 0.9;">mi4medfm.info@gmail.com</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-shell">
+      <div class="footer-left">
+        <img class="footer-logo" src="assets/images/brand/logo-wordmark.png" alt="MI4MedFM" />
+        <p>Mechanistic Interpretability for Medical Foundation Models</p>
+        <p class="footer-venue">A workshop at MICCAI 2026 · Abu Dhabi, UAE</p>
+      </div>
+      <div class="footer-right">
+        <img class="footer-miccai" src="assets/images/brand/miccai2026-logo-new.png" alt="MICCAI 2026" />
+        <p class="footer-copy">&copy; 2026 MI4MedFM. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
