@@ -72,14 +72,6 @@ The site is designed for frictionless deployment on **GitHub Pages**.
 2. In the GitHub repository settings, navigate to the **Pages** section.
 3. Select `Deploy from a branch` and choose `main` as the source.
 4. The site will automatically go live via GitHub Actions.
-
-## 📝 Updating Content
-
-When updating workshop details:
-- **Important Dates:** Update the date blocks inside the `<section id="dates">` in `index.html`.
-- **Speakers:** Update the `<article class="speaker-card">` under the `<section id="speakers">`.
-- **Organizers:** Add or remove team members within the `.organizer-grid` element.
-
 ---
 <div align="center">
   <i>Designed for MICCAI 2026 • Mechanistic Interpretability for Medical Foundation Models</i>
